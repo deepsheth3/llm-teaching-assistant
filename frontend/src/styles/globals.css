@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 10 10 10;
+    --muted: 245 245 245;
+    --muted-foreground: 115 115 115;
+    --primary: 14 165 233;
+    --primary-foreground: 255 255 255;
+    --accent: 217 70 239;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 10 10 10;
+    --foreground: 245 245 245;
+    --muted: 38 38 38;
+    --muted-foreground: 163 163 163;
+    --primary: 14 165 233;
+    --primary-foreground: 255 255 255;
+    --accent: 217 70 239;
+  }
+
+  * {
+    @apply border-gray-200 dark:border-gray-800;
+  }
+  
+  body {
+    @apply bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-600;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 bg-clip-text text-transparent;
+    background-size: 200% auto;
+    animation: gradient 3s linear infinite;
+  }
+
+  .glass {
+    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl;
+  }
+
+  .glass-border {
+    @apply border border-gray-200/50 dark:border-gray-700/50;
+  }
+
+  /* Markdown styles */
+  .prose-custom {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
+  .prose-custom h1,
+  .prose-custom h2,
+  .prose-custom h3,
+  .prose-custom h4 {
+    @apply font-semibold text-gray-900 dark:text-white mb-4 mt-6;
+  }
+
+  .prose-custom h1 { @apply text-3xl; }
+  .prose-custom h2 { @apply text-2xl; }
+  .prose-custom h3 { @apply text-xl; }
+  .prose-custom h4 { @apply text-lg; }
+
+  .prose-custom p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  .prose-custom ul,
+  .prose-custom ol {
+    @apply mb-4 pl-6;
+  }
+
+  .prose-custom li {
+    @apply mb-2;
+  }
+
+  .prose-custom ul li {
+    @apply list-disc;
+  }
+
+  .prose-custom ol li {
+    @apply list-decimal;
+  }
+
+  .prose-custom code {
+    @apply px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-800 text-sm font-mono;
+  }
+
+  .prose-custom pre {
+    @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4;
+  }
+
+  .prose-custom pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .prose-custom a {
+    @apply text-primary-500 hover:underline;
+  }
+
+  .prose-custom blockquote {
+    @apply border-l-4 border-primary-500 pl-4 italic text-gray-600 dark:text-gray-400 my-4;
+  }
+
+  .prose-custom table {
+    @apply w-full mb-4 border-collapse;
+  }
+
+  .prose-custom th,
+  .prose-custom td {
+    @apply border border-gray-200 dark:border-gray-700 px-4 py-2 text-left;
+  }
+
+  .prose-custom th {
+    @apply bg-gray-50 dark:bg-gray-800 font-semibold;
+  }
+
+  /* Loading skeleton */
+  .skeleton {
+    @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: animate-in 0.3s ease-out;
+  }
+
+  @keyframes animate-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% center;
+    }
+    50% {
+      background-position: 100% center;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}
