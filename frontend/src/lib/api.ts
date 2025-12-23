@@ -41,6 +41,8 @@ export interface Problem {
   statement: string
   url: string
   topics: string[]
+  acceptance_rate?: number
+  hints?: string[]
 }
 
 export interface ProblemResponse {
