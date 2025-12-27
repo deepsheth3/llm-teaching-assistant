@@ -6,6 +6,8 @@ An AI-powered teaching assistant that retrieves research papers from arXiv, conv
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.109+-green.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
+
+
 ## ✨ Features
 
 - **🔍 Semantic Paper Search** - Find relevant papers using natural language queries
@@ -13,6 +15,7 @@ An AI-powered teaching assistant that retrieves research papers from arXiv, conv
 - **⚡ Streaming Support** - Real-time lesson generation via Server-Sent Events
 - **💻 Coding Practice** - Random LeetCode problems for interview prep
 - **🚀 Production Ready** - Proper error handling, logging, and caching
+
 
 ## 🏗️ Architecture
 
