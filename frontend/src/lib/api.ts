@@ -55,6 +55,29 @@ export interface StreamChunk {
   data: Record<string, unknown>
 }
 
+// ============ NEW: Clarify Types ============
+
+export interface ClarifyResponse {
+  original: string
+  prompts: string[]
+}
+
+// ============ API Functions ============
+
+export async function clarifyQuery(query: string): Promise<ClarifyResponse> {
+  const response = await fetch(`${API_BASE}/clarify`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query }),
+  })
+  
+  if (!response.ok) {
+    throw new Error('Failed to clarify query')
+  }
+  
+  return response.json()
+}
+
 export async function generateLesson(request: LessonRequest): Promise<LessonResponse> {
   const response = await fetch(`${API_BASE}/teach`, {
     method: 'POST',

@@ -1,120 +1,85 @@
-# Project Context for Claude
+# Complete Project Context for Claude
 
-Generated: Fri Dec 26 20:02:00 PST 2025
+Generated: Fri Dec 26 20:30:29 PST 2025
 
 ## 1. Project Structure
 ```
-./frontend/tsconfig.node.json
-./frontend/node_modules/queue-microtask/package.json
-./frontend/node_modules/queue-microtask/index.d.ts
-./frontend/node_modules/is-plain-obj/package.json
-./frontend/node_modules/is-plain-obj/index.d.ts
-./frontend/node_modules/tinyglobby/node_modules/picomatch/package.json
-./frontend/node_modules/tinyglobby/node_modules/fdir/package.json
-./frontend/node_modules/tinyglobby/package.json
-./frontend/node_modules/@alloc/quick-lru/package.json
-./frontend/node_modules/@alloc/quick-lru/index.d.ts
-./frontend/node_modules/reusify/package.json
-./frontend/node_modules/reusify/reusify.d.ts
-./frontend/node_modules/reusify/tsconfig.json
-./frontend/node_modules/zwitch/package.json
-./frontend/node_modules/zwitch/index.d.ts
-./frontend/node_modules/jsesc/package.json
-./frontend/node_modules/pirates/package.json
-./frontend/node_modules/pirates/index.d.ts
-./frontend/node_modules/@types/ms/package.json
-./frontend/node_modules/@types/ms/index.d.ts
-./frontend/node_modules/@types/hast/package.json
-./frontend/node_modules/@types/hast/index.d.ts
-./frontend/node_modules/@types/babel__template/package.json
-./frontend/node_modules/@types/babel__template/index.d.ts
-./frontend/node_modules/@types/react-dom/test-utils/index.d.ts
-./frontend/node_modules/@types/react-dom/server.d.ts
-./frontend/node_modules/@types/react-dom/canary.d.ts
-./frontend/node_modules/@types/react-dom/experimental.d.ts
-./frontend/node_modules/@types/react-dom/package.json
-./frontend/node_modules/@types/react-dom/index.d.ts
-./frontend/node_modules/@types/react-dom/client.d.ts
-./frontend/node_modules/@types/babel__generator/package.json
-./frontend/node_modules/@types/babel__generator/index.d.ts
-./frontend/node_modules/@types/babel__traverse/package.json
-./frontend/node_modules/@types/babel__traverse/index.d.ts
-./frontend/node_modules/@types/prop-types/package.json
-./frontend/node_modules/@types/prop-types/index.d.ts
-./frontend/node_modules/@types/mdast/package.json
-./frontend/node_modules/@types/mdast/index.d.ts
-./frontend/node_modules/@types/estree/flow.d.ts
-./frontend/node_modules/@types/estree/package.json
-./frontend/node_modules/@types/estree/index.d.ts
-./frontend/node_modules/@types/unist/package.json
-./frontend/node_modules/@types/unist/index.d.ts
-./frontend/node_modules/@types/babel__core/package.json
-./frontend/node_modules/@types/babel__core/index.d.ts
-./frontend/node_modules/@types/react/jsx-dev-runtime.d.ts
-./frontend/node_modules/@types/react/jsx-runtime.d.ts
-./frontend/node_modules/@types/react/canary.d.ts
-./frontend/node_modules/@types/react/experimental.d.ts
-./frontend/node_modules/@types/react/package.json
-./frontend/node_modules/@types/react/global.d.ts
-./frontend/node_modules/@types/react/ts5.0/jsx-dev-runtime.d.ts
-./frontend/node_modules/@types/react/ts5.0/jsx-runtime.d.ts
-./frontend/node_modules/@types/react/ts5.0/canary.d.ts
-./frontend/node_modules/@types/react/ts5.0/experimental.d.ts
-./frontend/node_modules/@types/react/ts5.0/global.d.ts
-./frontend/node_modules/@types/react/ts5.0/index.d.ts
-./frontend/node_modules/@types/react/index.d.ts
-./frontend/node_modules/@types/debug/package.json
-./frontend/node_modules/@types/debug/index.d.ts
-./frontend/node_modules/@types/estree-jsx/package.json
-./frontend/node_modules/@types/estree-jsx/index.d.ts
-./frontend/node_modules/micromark-core-commonmark/package.json
-./frontend/node_modules/micromark-core-commonmark/lib/content.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/html-flow.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/character-reference.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/heading-atx.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/label-start-link.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/setext-underline.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/label-end.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/autolink.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/code-fenced.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/block-quote.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/line-ending.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/character-escape.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/html-text.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/label-start-image.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/code-text.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/attention.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/list.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/hard-break-escape.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/code-indented.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/thematic-break.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/definition.d.ts
-./frontend/node_modules/micromark-core-commonmark/lib/blank-line.d.ts
-./frontend/node_modules/micromark-core-commonmark/dev/lib/content.d.ts
-./frontend/node_modules/micromark-core-commonmark/dev/lib/html-flow.d.ts
-./frontend/node_modules/micromark-core-commonmark/dev/lib/character-reference.d.ts
-./frontend/node_modules/micromark-core-commonmark/dev/lib/heading-atx.d.ts
-./frontend/node_modules/micromark-core-commonmark/dev/lib/label-start-link.d.ts
-./frontend/node_modules/micromark-core-commonmark/dev/lib/setext-underline.d.ts
-./frontend/node_modules/micromark-core-commonmark/dev/lib/label-end.d.ts
-./frontend/node_modules/micromark-core-commonmark/dev/lib/autolink.d.ts
-./frontend/node_modules/micromark-core-commonmark/dev/lib/code-fenced.d.ts
-./frontend/node_modules/micromark-core-commonmark/dev/lib/block-quote.d.ts
-./frontend/node_modules/micromark-core-commonmark/dev/lib/line-ending.d.ts
-./frontend/node_modules/micromark-core-commonmark/dev/lib/character-escape.d.ts
-./frontend/node_modules/micromark-core-commonmark/dev/lib/html-text.d.ts
-./frontend/node_modules/micromark-core-commonmark/dev/lib/label-start-image.d.ts
 ```
 
 ## 2. Backend Code
 
-### backend/core/config.py
+### 2.1 Core
+
+#### backend/core/__init__.py
 ```python
 """
-Configuration Management
+Core Package
+
+Configuration, logging, and exception handling.
+"""
+
+from .config import Settings, get_settings, get_config
+from .exceptions import (
+    BaseAppException,
+    ConfigurationError,
+    ExternalServiceError,
+    OpenAIError,
+    GROBIDError,
+    ArxivError,
+    LeetCodeError,
+    ResourceNotFoundError,
+    PaperNotFoundError,
+    IndexNotFoundError,
+    ValidationError,
+    RateLimitExceededError,
+    ProcessingError,
+    PDFProcessingError,
+    EmbeddingError,
+    LessonGenerationError,
+)
+from .logging import get_logger, setup_logging
+
+__all__ = [
+    # Config
+    "Settings",
+    "get_settings",
+    "get_config",
+    # Logging
+    "get_logger",
+    "setup_logging",
+    # Exceptions
+    "BaseAppException",
+    "ConfigurationError",
+    "ExternalServiceError",
+    "OpenAIError",
+    "GROBIDError",
+    "ArxivError",
+    "LeetCodeError",
+    "ResourceNotFoundError",
+    "PaperNotFoundError",
+    "IndexNotFoundError",
+    "ValidationError",
+    "RateLimitExceededError",
+    "ProcessingError",
+    "PDFProcessingError",
+    "EmbeddingError",
+    "LessonGenerationError",
+]
+```
+
+#### backend/core/config.py
+```python
+"""
+Configuration Management v2
 
 Centralized configuration with environment variable support,
 validation, and sensible defaults.
+
+NEW in v2:
+- Relevance thresholds
+- Dynamic paper fetching settings
+- Pinecone (optional) settings
+- Removed LeetCode settings
 """
 
 import os
@@ -125,56 +90,113 @@ from pydantic import Field, field_validator
 from functools import lru_cache
 
 
-# Get the project root directory (where this config.py is located, go up one level)
+# Get the project root directory
 PROJECT_ROOT = Path(__file__).parent.parent.resolve()
 
 
 class Settings(BaseSettings):
     """Application settings with environment variable support."""
     
+    # ==========================================================================
     # App Info
+    # ==========================================================================
     app_name: str = "LLM Teaching Assistant"
     app_version: str = "2.0.0"
     debug: bool = Field(default=False, description="Debug mode")
     
+    # ==========================================================================
     # API Settings
+    # ==========================================================================
     api_host: str = "0.0.0.0"
     api_port: int = 8000
     api_prefix: str = "/api/v1"
     
+    # ==========================================================================
     # OpenAI Settings
+    # ==========================================================================
     openai_api_key: str = Field(..., description="OpenAI API key")
     embedding_model: str = "text-embedding-3-small"
     chat_model: str = "gpt-4o"
-    lesson_model: str = "gpt-4o-mini"  # Cheaper model for lesson generation
+    lesson_model: str = "gpt-4o-mini"
     
+    # ==========================================================================
+    # Vector Database Settings (NEW in v2)
+    # ==========================================================================
+    # Pinecone (optional - for production with dynamic updates)
+    use_pinecone: bool = Field(default=False, description="Use Pinecone instead of FAISS")
+    pinecone_api_key: Optional[str] = Field(default=None, description="Pinecone API key")
+    pinecone_index_name: str = "llm-teaching-assistant"
+    pinecone_environment: str = "us-east-1"
+    
+    # ==========================================================================
+    # Relevance Thresholds (NEW in v2)
+    # ==========================================================================
+    high_relevance_threshold: float = Field(
+        default=0.50, 
+        description="Score above this = high relevance, use directly"
+    )
+    medium_relevance_threshold: float = Field(
+        default=0.35, 
+        description="Score above this = medium relevance, use but try to improve"
+    )
+    low_relevance_threshold: float = Field(
+        default=0.20,
+        description="Score below this = irrelevant"
+    )
+    
+    # ==========================================================================
+    # Dynamic Paper Fetching (NEW in v2)
+    # ==========================================================================
+    dynamic_fetch_enabled: bool = Field(
+        default=True, 
+        description="Enable fetching new papers when no good match"
+    )
+    max_papers_per_fetch: int = Field(
+        default=10, 
+        description="Max papers to fetch per query"
+    )
+    max_daily_fetches: int = Field(
+        default=100, 
+        description="Max Semantic Scholar API calls per day (cost control)"
+    )
+    semantic_scholar_api_key: Optional[str] = Field(
+        default=None, 
+        description="Optional API key for higher rate limits"
+    )
+    
+    # ==========================================================================
     # GROBID Settings
+    # ==========================================================================
     grobid_url: str = "https://kermitt2-grobid.hf.space"
-    grobid_timeout: int = 120  # seconds
-    use_grobid: bool = True  # Can disable for abstract-only mode
+    grobid_timeout: int = 120
+    use_grobid: bool = True
     
-    # File Paths - Now absolute paths based on PROJECT_ROOT
+    # ==========================================================================
+    # File Paths
+    # ==========================================================================
     data_dir: Path = Field(default_factory=lambda: PROJECT_ROOT / "data")
     faiss_index_path: Path = Field(default_factory=lambda: PROJECT_ROOT / "data" / "faiss" / "papers.index")
     urls_json_path: Path = Field(default_factory=lambda: PROJECT_ROOT / "data" / "faiss" / "urls.json")
     cache_dir: Path = Field(default_factory=lambda: PROJECT_ROOT / "data" / "cache")
     
+    # ==========================================================================
     # Cache Settings
+    # ==========================================================================
     cache_enabled: bool = True
-    cache_ttl: int = 86400  # 24 hours in seconds
+    cache_ttl: int = 86400  # 24 hours
     
+    # ==========================================================================
     # Rate Limiting
+    # ==========================================================================
     rate_limit_enabled: bool = True
-    rate_limit_requests: int = 30  # requests per minute
-    rate_limit_window: int = 60  # seconds
+    rate_limit_requests: int = 30
+    rate_limit_window: int = 60
     
-    # LeetCode Settings
-    leetcode_difficulties: list[str] = ["Medium", "Hard"]
-    leetcode_allow_premium: bool = False
-    
+    # ==========================================================================
     # Logging
+    # ==========================================================================
     log_level: str = "INFO"
-    log_format: str = "json"  # "json" or "text"
+    log_format: str = "text"
     
     @field_validator("openai_api_key")
     @classmethod
@@ -182,6 +204,13 @@ class Settings(BaseSettings):
         if not v or v == "your-api-key-here":
             raise ValueError("Valid OpenAI API key is required")
         return v
+    
+    @field_validator("pinecone_api_key")
+    @classmethod
+    def validate_pinecone_key(cls, v: Optional[str]) -> Optional[str]:
+        if v and v != "your-pinecone-key":
+            return v
+        return None
     
     def ensure_directories(self):
         """Ensure all required directories exist."""
@@ -209,20 +238,751 @@ def get_config() -> Settings:
     return get_settings()
 ```
 
-### backend/services/__init__.py
+#### backend/core/exceptions.py
 ```python
 """
-Services Package
+Custom Exceptions
+
+Structured exceptions for clean error handling throughout the application.
+"""
+
+from typing import Optional, Any
+
+
+class BaseAppException(Exception):
+    """Base exception for all application errors."""
+    
+    def __init__(
+        self,
+        message: str,
+        code: str = "INTERNAL_ERROR",
+        status_code: int = 500,
+        details: Optional[dict[str, Any]] = None
+    ):
+        self.message = message
+        self.code = code
+        self.status_code = status_code
+        self.details = details or {}
+        super().__init__(self.message)
+    
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "error": {
+                "code": self.code,
+                "message": self.message,
+                "details": self.details
+            }
+        }
+
+
+# ============ Configuration Errors ============
+
+class ConfigurationError(BaseAppException):
+    """Configuration-related errors."""
+    
+    def __init__(self, message: str, details: Optional[dict] = None):
+        super().__init__(
+            message=message,
+            code="CONFIGURATION_ERROR",
+            status_code=500,
+            details=details
+        )
+
+
+# ============ External Service Errors ============
+
+class ExternalServiceError(BaseAppException):
+    """Errors from external services (OpenAI, GROBID, etc.)."""
+    
+    def __init__(self, service: str, message: str, details: Optional[dict] = None):
+        super().__init__(
+            message=f"{service} error: {message}",
+            code="EXTERNAL_SERVICE_ERROR",
+            status_code=502,
+            details={"service": service, **(details or {})}
+        )
+
+
+class OpenAIError(ExternalServiceError):
+    """OpenAI API errors."""
+    
+    def __init__(self, message: str, details: Optional[dict] = None):
+        super().__init__("OpenAI", message, details)
+
+
+class GROBIDError(ExternalServiceError):
+    """GROBID service errors."""
+    
+    def __init__(self, message: str, details: Optional[dict] = None):
+        super().__init__("GROBID", message, details)
+
+
+class ArxivError(ExternalServiceError):
+    """arXiv API errors."""
+    
+    def __init__(self, message: str, details: Optional[dict] = None):
+        super().__init__("arXiv", message, details)
+
+
+class LeetCodeError(ExternalServiceError):
+    """LeetCode API errors."""
+    
+    def __init__(self, message: str, details: Optional[dict] = None):
+        super().__init__("LeetCode", message, details)
+
+
+# ============ Resource Errors ============
+
+class ResourceNotFoundError(BaseAppException):
+    """Resource not found errors."""
+    
+    def __init__(self, resource: str, identifier: str, details: Optional[dict] = None):
+        super().__init__(
+            message=f"{resource} not found: {identifier}",
+            code="RESOURCE_NOT_FOUND",
+            status_code=404,
+            details={"resource": resource, "identifier": identifier, **(details or {})}
+        )
+
+
+class PaperNotFoundError(ResourceNotFoundError):
+    """Paper not found error."""
+    
+    def __init__(self, query: str):
+        super().__init__("Paper", query)
+
+
+class IndexNotFoundError(ResourceNotFoundError):
+    """FAISS index not found error."""
+    
+    def __init__(self, path: str):
+        super().__init__("FAISS Index", path)
+
+
+# ============ Validation Errors ============
+
+class ValidationError(BaseAppException):
+    """Input validation errors."""
+    
+    def __init__(self, message: str, field: Optional[str] = None, details: Optional[dict] = None):
+        super().__init__(
+            message=message,
+            code="VALIDATION_ERROR",
+            status_code=400,
+            details={"field": field, **(details or {})} if field else details
+        )
+
+
+# ============ Rate Limiting ============
+
+class RateLimitExceededError(BaseAppException):
+    """Rate limit exceeded error."""
+    
+    def __init__(self, retry_after: int = 60):
+        super().__init__(
+            message="Rate limit exceeded. Please try again later.",
+            code="RATE_LIMIT_EXCEEDED",
+            status_code=429,
+            details={"retry_after": retry_after}
+        )
+
+
+# ============ Processing Errors ============
+
+class ProcessingError(BaseAppException):
+    """General processing errors."""
+    
+    def __init__(self, message: str, stage: str, details: Optional[dict] = None):
+        super().__init__(
+            message=message,
+            code="PROCESSING_ERROR",
+            status_code=500,
+            details={"stage": stage, **(details or {})}
+        )
+
+
+class PDFProcessingError(ProcessingError):
+    """PDF processing errors."""
+    
+    def __init__(self, message: str, url: Optional[str] = None):
+        super().__init__(
+            message=message,
+            stage="pdf_processing",
+            details={"url": url} if url else None
+        )
+
+
+class EmbeddingError(ProcessingError):
+    """Embedding generation errors."""
+    
+    def __init__(self, message: str):
+        super().__init__(message=message, stage="embedding")
+
+
+class LessonGenerationError(ProcessingError):
+    """Lesson generation errors."""
+    
+    def __init__(self, message: str, section: Optional[str] = None):
+        super().__init__(
+            message=message,
+            stage="lesson_generation",
+            details={"section": section} if section else None
+        )
+```
+
+#### backend/core/logging.py
+```python
+"""
+Structured Logging
+
+Production-ready logging with JSON output support for easy parsing.
+"""
+
+import sys
+import logging
+import json
+from datetime import datetime
+from typing import Any
+from functools import lru_cache
+
+
+class JSONFormatter(logging.Formatter):
+    """JSON log formatter for structured logging."""
+    
+    def format(self, record: logging.LogRecord) -> str:
+        log_data = {
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "level": record.levelname,
+            "logger": record.name,
+            "message": record.getMessage(),
+            "module": record.module,
+            "function": record.funcName,
+            "line": record.lineno,
+        }
+        
+        # Add exception info if present
+        if record.exc_info:
+            log_data["exception"] = self.formatException(record.exc_info)
+        
+        # Add extra fields
+        if hasattr(record, "extra_data"):
+            log_data["data"] = record.extra_data
+        
+        return json.dumps(log_data)
+
+
+class TextFormatter(logging.Formatter):
+    """Human-readable text formatter with colors."""
+    
+    COLORS = {
+        "DEBUG": "\033[36m",     # Cyan
+        "INFO": "\033[32m",      # Green
+        "WARNING": "\033[33m",   # Yellow
+        "ERROR": "\033[31m",     # Red
+        "CRITICAL": "\033[35m",  # Magenta
+    }
+    RESET = "\033[0m"
+    
+    def format(self, record: logging.LogRecord) -> str:
+        color = self.COLORS.get(record.levelname, "")
+        timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+        
+        message = f"{color}[{timestamp}] {record.levelname:8}{self.RESET} | {record.name} | {record.getMessage()}"
+        
+        if record.exc_info:
+            message += f"\n{self.formatException(record.exc_info)}"
+        
+        return message
+
+
+class AppLogger(logging.Logger):
+    """Extended logger with structured data support."""
+    
+    def _log_with_data(
+        self,
+        level: int,
+        msg: str,
+        data: dict[str, Any] | None = None,
+        *args,
+        **kwargs
+    ):
+        if data:
+            extra = kwargs.get("extra", {})
+            extra["extra_data"] = data
+            kwargs["extra"] = extra
+        
+        self.log(level, msg, *args, **kwargs)
+    
+    def debug_with_data(self, msg: str, data: dict[str, Any] | None = None, **kwargs):
+        self._log_with_data(logging.DEBUG, msg, data, **kwargs)
+    
+    def info_with_data(self, msg: str, data: dict[str, Any] | None = None, **kwargs):
+        self._log_with_data(logging.INFO, msg, data, **kwargs)
+    
+    def warning_with_data(self, msg: str, data: dict[str, Any] | None = None, **kwargs):
+        self._log_with_data(logging.WARNING, msg, data, **kwargs)
+    
+    def error_with_data(self, msg: str, data: dict[str, Any] | None = None, **kwargs):
+        self._log_with_data(logging.ERROR, msg, data, **kwargs)
+
+
+def setup_logging(
+    level: str = "INFO",
+    format_type: str = "text",
+    name: str = "llm_ta"
+) -> AppLogger:
+    """
+    Setup application logging.
+    
+    Args:
+        level: Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+        format_type: "json" for structured logs, "text" for human-readable
+        name: Logger name
+    
+    Returns:
+        Configured logger instance
+    """
+    # Set custom logger class
+    logging.setLoggerClass(AppLogger)
+    
+    # Get or create logger
+    logger = logging.getLogger(name)
+    logger.setLevel(getattr(logging, level.upper()))
+    
+    # Remove existing handlers
+    logger.handlers.clear()
+    
+    # Create handler
+    handler = logging.StreamHandler(sys.stdout)
+    handler.setLevel(getattr(logging, level.upper()))
+    
+    # Set formatter
+    if format_type == "json":
+        handler.setFormatter(JSONFormatter())
+    else:
+        handler.setFormatter(TextFormatter())
+    
+    logger.addHandler(handler)
+    
+    # Prevent propagation to root logger
+    logger.propagate = False
+    
+    return logger
+
+
+@lru_cache()
+def get_logger(name: str = "llm_ta") -> AppLogger:
+    """Get a cached logger instance."""
+    from core.config import get_settings
+    
+    settings = get_settings()
+    return setup_logging(
+        level=settings.log_level,
+        format_type=settings.log_format,
+        name=name
+    )
+```
+
+### 2.2 Models
+
+#### backend/models/__init__.py
+```python
+"""
+Data Models Package
+
+Pydantic models for all data structures.
+"""
+
+from .paper import (
+    PaperMetadata,
+    PaperSection,
+    ParsedPaper,
+    PaperSearchResult,
+    PaperSearchRequest,
+)
+from .lesson import (
+    LessonDifficulty,
+    LessonFragment,
+    FullLesson,
+    LessonRequest,
+    LessonResponse,
+    StreamingLessonChunk,
+)
+from .problem import (
+    ProblemDifficulty,
+    LeetCodeProblem,
+    ProblemRequest,
+    ProblemResponse,
+    ProblemCatalogEntry,
+)
+
+__all__ = [
+    # Paper models
+    "PaperMetadata",
+    "PaperSection",
+    "ParsedPaper",
+    "PaperSearchResult",
+    "PaperSearchRequest",
+    # Lesson models
+    "LessonDifficulty",
+    "LessonFragment",
+    "FullLesson",
+    "LessonRequest",
+    "LessonResponse",
+    "StreamingLessonChunk",
+    # Problem models
+    "ProblemDifficulty",
+    "LeetCodeProblem",
+    "ProblemRequest",
+    "ProblemResponse",
+    "ProblemCatalogEntry",
+]
+```
+
+#### backend/models/lesson.py
+```python
+"""
+Lesson Data Models
+
+Pydantic models for lesson-related data structures.
+"""
+
+from datetime import datetime
+from typing import Optional
+from enum import Enum
+from pydantic import BaseModel, Field
+
+
+class LessonDifficulty(str, Enum):
+    """Lesson difficulty levels."""
+    BEGINNER = "beginner"
+    INTERMEDIATE = "intermediate"
+    ADVANCED = "advanced"
+
+
+class LessonFragment(BaseModel):
+    """A single lesson fragment from a paper section."""
+    
+    section_name: str = Field(..., description="Original section name")
+    content: str = Field(..., description="Beginner-friendly lesson content")
+    order: int = Field(..., description="Order in the full lesson")
+    has_math: bool = Field(False, description="Whether section includes math")
+    has_code: bool = Field(False, description="Whether section includes code")
+    estimated_read_time: int = Field(0, description="Estimated read time in minutes")
+    
+    def __init__(self, **data):
+        super().__init__(**data)
+        if self.estimated_read_time == 0:
+            # Average reading speed: 200 words per minute
+            word_count = len(self.content.split())
+            self.estimated_read_time = max(1, word_count // 200)
+
+
+class FullLesson(BaseModel):
+    """A complete lesson generated from a paper."""
+    
+    paper_id: str = Field(..., description="Source paper arXiv ID")
+    paper_title: str = Field(..., description="Source paper title")
+    paper_url: str = Field(..., description="Source paper URL")
+    query: str = Field(..., description="Original user query")
+    
+    fragments: list[LessonFragment] = Field(default_factory=list)
+    
+    difficulty: LessonDifficulty = Field(LessonDifficulty.BEGINNER)
+    total_read_time: int = Field(0, description="Total estimated read time")
+    
+    generated_at: datetime = Field(default_factory=datetime.utcnow)
+    generation_time_seconds: float = Field(0, description="Time to generate")
+    
+    def __init__(self, **data):
+        super().__init__(**data)
+        if self.total_read_time == 0 and self.fragments:
+            self.total_read_time = sum(f.estimated_read_time for f in self.fragments)
+    
+    @property
+    def full_content(self) -> str:
+        """Get the full lesson as a single string."""
+        parts = []
+        for fragment in sorted(self.fragments, key=lambda f: f.order):
+            parts.append(f"## {fragment.section_name.title()}\n\n{fragment.content}")
+        return "\n\n---\n\n".join(parts)
+    
+    @property
+    def table_of_contents(self) -> list[str]:
+        """Get section names as table of contents."""
+        return [f.section_name.title() for f in sorted(self.fragments, key=lambda f: f.order)]
+
+
+class LessonRequest(BaseModel):
+    """Request to generate a lesson."""
+    
+    query: str = Field(..., min_length=3, max_length=500, description="What to learn about")
+    difficulty: LessonDifficulty = Field(LessonDifficulty.BEGINNER)
+    include_examples: bool = Field(True, description="Include examples in explanations")
+    include_math: bool = Field(True, description="Include step-by-step math")
+    max_sections: Optional[int] = Field(None, ge=1, le=20, description="Limit sections")
+    
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "query": "attention mechanisms in transformers",
+                "difficulty": "beginner",
+                "include_examples": True,
+                "include_math": True
+            }
+        }
+
+
+class LessonResponse(BaseModel):
+    """Response containing a generated lesson."""
+    
+    success: bool = Field(True)
+    lesson: Optional[FullLesson] = None
+    error: Optional[str] = None
+    
+    # Metadata
+    cached: bool = Field(False, description="Whether result was from cache")
+    processing_time_ms: int = Field(0, description="Processing time in milliseconds")
+
+
+class StreamingLessonChunk(BaseModel):
+    """A chunk of a streaming lesson response."""
+    
+    type: str = Field(..., description="Chunk type: 'metadata', 'section', 'done', 'error'")
+    data: dict = Field(default_factory=dict)
+    
+    class Config:
+        json_schema_extra = {
+            "examples": [
+                {"type": "metadata", "data": {"paper_title": "Attention Is All You Need", "total_sections": 5}},
+                {"type": "section", "data": {"name": "Introduction", "content": "Let's start..."}},
+                {"type": "done", "data": {"total_time_seconds": 45.2}},
+                {"type": "error", "data": {"message": "Failed to process"}}
+            ]
+        }
+```
+
+#### backend/models/paper.py
+```python
+"""
+Paper Data Models
+
+Pydantic models for paper-related data structures.
+"""
+
+from datetime import datetime
+from typing import Optional
+from pydantic import BaseModel, Field, HttpUrl
+
+
+class PaperMetadata(BaseModel):
+    """Metadata for a research paper."""
+    
+    arxiv_id: str = Field(..., description="arXiv paper ID")
+    title: str = Field(..., description="Paper title")
+    url: HttpUrl = Field(..., description="Paper URL")
+    abstract: Optional[str] = Field(None, description="Paper abstract")
+    authors: list[str] = Field(default_factory=list, description="Paper authors")
+    categories: list[str] = Field(default_factory=list, description="arXiv categories")
+    published_date: Optional[datetime] = Field(None, description="Publication date")
+    
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "arxiv_id": "1706.03762",
+                "title": "Attention Is All You Need",
+                "url": "https://arxiv.org/abs/1706.03762",
+                "abstract": "The dominant sequence transduction models...",
+                "authors": ["Ashish Vaswani", "Noam Shazeer"],
+                "categories": ["cs.CL", "cs.LG"],
+                "published_date": "2017-06-12T00:00:00Z"
+            }
+        }
+
+
+class PaperSection(BaseModel):
+    """A section extracted from a paper."""
+    
+    name: str = Field(..., description="Section name/title")
+    content: str = Field(..., description="Section text content")
+    order: int = Field(..., description="Section order in paper")
+    word_count: int = Field(0, description="Word count")
+    
+    def __init__(self, **data):
+        super().__init__(**data)
+        if self.word_count == 0:
+            self.word_count = len(self.content.split())
+
+
+class ParsedPaper(BaseModel):
+    """A fully parsed paper with sections."""
+    
+    metadata: PaperMetadata
+    sections: list[PaperSection] = Field(default_factory=list)
+    raw_text: Optional[str] = Field(None, description="Full raw text")
+    parsing_method: str = Field("grobid", description="Method used to parse (grobid/abstract)")
+    parsed_at: datetime = Field(default_factory=datetime.utcnow)
+    
+    @property
+    def section_names(self) -> list[str]:
+        return [s.name for s in self.sections]
+    
+    @property
+    def total_words(self) -> int:
+        return sum(s.word_count for s in self.sections)
+
+
+class PaperSearchResult(BaseModel):
+    """Result from a paper search."""
+    
+    paper: PaperMetadata
+    similarity_score: float = Field(..., ge=0, le=1, description="Similarity score")
+    index_position: int = Field(..., description="Position in FAISS index")
+    
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "paper": {
+                    "arxiv_id": "1706.03762",
+                    "title": "Attention Is All You Need",
+                    "url": "https://arxiv.org/abs/1706.03762"
+                },
+                "similarity_score": 0.92,
+                "index_position": 42
+            }
+        }
+
+
+class PaperSearchRequest(BaseModel):
+    """Request to search for papers."""
+    
+    query: str = Field(..., min_length=3, max_length=500, description="Search query")
+    top_k: int = Field(1, ge=1, le=10, description="Number of results")
+    
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "query": "attention mechanisms in transformers",
+                "top_k": 3
+            }
+        }
+```
+
+#### backend/models/problem.py
+```python
+"""
+LeetCode Problem Models
+
+Pydantic models for LeetCode-related data structures.
+"""
+
+from typing import Optional
+from enum import Enum
+from pydantic import BaseModel, Field
+
+
+class ProblemDifficulty(str, Enum):
+    """LeetCode problem difficulty levels."""
+    EASY = "Easy"
+    MEDIUM = "Medium"
+    HARD = "Hard"
+
+
+class LeetCodeProblem(BaseModel):
+    """A LeetCode problem."""
+    
+    title: str = Field(..., description="Problem title")
+    slug: str = Field(..., description="URL slug")
+    difficulty: ProblemDifficulty = Field(..., description="Difficulty level")
+    statement: str = Field(..., description="Problem statement")
+    url: str = Field("", description="Full LeetCode URL")
+    
+    # Optional metadata
+    acceptance_rate: Optional[float] = Field(None, description="Acceptance rate percentage")
+    topics: list[str] = Field(default_factory=list, description="Related topics")
+    hints: list[str] = Field(default_factory=list, description="Problem hints")
+    
+    def __init__(self, **data):
+        super().__init__(**data)
+        if not self.url and self.slug:
+            self.url = f"https://leetcode.com/problems/{self.slug}/"
+    
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "title": "Two Sum",
+                "slug": "two-sum",
+                "difficulty": "Easy",
+                "statement": "Given an array of integers nums and an integer target...",
+                "url": "https://leetcode.com/problems/two-sum/",
+                "topics": ["Array", "Hash Table"]
+            }
+        }
+
+
+class ProblemRequest(BaseModel):
+    """Request for a LeetCode problem."""
+    
+    difficulties: list[ProblemDifficulty] = Field(
+        default=[ProblemDifficulty.MEDIUM, ProblemDifficulty.HARD],
+        description="Allowed difficulties"
+    )
+    topics: Optional[list[str]] = Field(None, description="Filter by topics")
+    exclude_premium: bool = Field(True, description="Exclude premium problems")
+    
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "difficulties": ["Medium", "Hard"],
+                "exclude_premium": True
+            }
+        }
+
+
+class ProblemResponse(BaseModel):
+    """Response containing a LeetCode problem."""
+    
+    success: bool = Field(True)
+    problem: Optional[LeetCodeProblem] = None
+    error: Optional[str] = None
+    
+    # Metadata
+    cached: bool = Field(False)
+    processing_time_ms: int = Field(0)
+
+
+class ProblemCatalogEntry(BaseModel):
+    """Entry in the LeetCode problem catalog."""
+    
+    slug: str
+    title: str
+    difficulty: ProblemDifficulty
+    paid_only: bool = False
+    acceptance_rate: Optional[float] = None
+```
+
+### 2.3 Services
+
+#### backend/services/__init__.py
+```python
+"""
+Services Package v2
 
 Business logic layer for the application.
+
+Changes in v2:
+- Removed LeetCodeService
+- Added QueryService (query enhancement)
+- Added ScholarService (dynamic paper fetching)
 """
 
 from .cache_service import CacheService, get_cache_service
 from .embedding_service import EmbeddingService, get_embedding_service
 from .paper_service import PaperService, get_paper_service
 from .lesson_service import LessonService, get_lesson_service
-from .leetcode_service import LeetCodeService, get_leetcode_service
 from .teaching_service import TeachingService, get_teaching_service
+from .query_service import QueryService, get_query_service
+from .scholar_service import ScholarService, get_scholar_service
 
 __all__ = [
     # Cache
@@ -237,16 +997,19 @@ __all__ = [
     # Lesson
     "LessonService",
     "get_lesson_service",
-    # LeetCode
-    "LeetCodeService",
-    "get_leetcode_service",
-    # Teaching
+    # Teaching (main orchestrator)
     "TeachingService",
     "get_teaching_service",
+    # Query Enhancement (NEW)
+    "QueryService",
+    "get_query_service",
+    # Scholar Service (NEW)
+    "ScholarService",
+    "get_scholar_service",
 ]
 ```
 
-### backend/services/cache_service.py
+#### backend/services/cache_service.py
 ```python
 """
 Cache Service
@@ -485,7 +1248,7 @@ def get_cache_service() -> CacheService:
     return _cache_service
 ```
 
-### backend/services/embedding_service.py
+#### backend/services/embedding_service.py
 ```python
 """
 Embedding Service
@@ -718,276 +1481,7 @@ def get_embedding_service() -> EmbeddingService:
     return _embedding_service
 ```
 
-### backend/services/leetcode_service.py
-```python
-"""
-LeetCode Service
-
-Fetches coding problems from LeetCode for interview practice.
-"""
-
-import random
-import requests
-import bs4
-from typing import Optional
-
-from core.config import get_settings
-from core.logging import get_logger
-from core.exceptions import LeetCodeError
-from models.problem import (
-    LeetCodeProblem,
-    ProblemDifficulty,
-    ProblemRequest,
-    ProblemCatalogEntry,
-)
-from services.cache_service import get_cache_service
-
-logger = get_logger(__name__)
-
-
-# LeetCode API constants
-LEETCODE_CATALOG_URL = "https://leetcode.com/api/problems/algorithms/"
-LEETCODE_GRAPHQL_URL = "https://leetcode.com/graphql"
-LEETCODE_GRAPHQL_QUERY = """
-query questionData($titleSlug: String!) {
-    question(titleSlug: $titleSlug) {
-        content
-        hints
-        topicTags { name }
-    }
-}
-"""
-
-
-class LeetCodeService:
-    """
-    Service for fetching LeetCode problems.
-    
-    Features:
-    - Catalog fetching with caching
-    - Random problem selection by difficulty
-    - Problem statement retrieval
-    - Topic filtering
-    """
-    
-    def __init__(self):
-        self.settings = get_settings()
-        self.cache = get_cache_service()
-        self._catalog: Optional[list[ProblemCatalogEntry]] = None
-        
-        logger.info("LeetCode service initialized")
-    
-    def get_random_problem(self, request: Optional[ProblemRequest] = None) -> LeetCodeProblem:
-        """
-        Get a random LeetCode problem.
-        
-        Args:
-            request: Problem selection criteria
-            
-        Returns:
-            Random problem matching criteria
-        """
-        request = request or ProblemRequest()
-        
-        # Get catalog
-        catalog = self._get_catalog()
-        
-        # Filter problems
-        filtered = self._filter_problems(catalog, request)
-        
-        if not filtered:
-            raise LeetCodeError("No problems match the specified criteria")
-        
-        # Select random problem
-        selected = random.choice(filtered)
-        
-        # Fetch full problem
-        return self._fetch_problem(selected)
-    
-    def get_problem_by_slug(self, slug: str) -> LeetCodeProblem:
-        """
-        Get a specific problem by slug.
-        
-        Args:
-            slug: Problem URL slug (e.g., "two-sum")
-            
-        Returns:
-            The problem
-        """
-        # Check cache
-        cached = self.cache.get("leetcode_problems", slug)
-        if cached:
-            logger.debug(f"LeetCode cache hit: {slug}")
-            return LeetCodeProblem(**cached)
-        
-        # Find in catalog
-        catalog = self._get_catalog()
-        entry = next((p for p in catalog if p.slug == slug), None)
-        
-        if not entry:
-            raise LeetCodeError(f"Problem not found: {slug}")
-        
-        return self._fetch_problem(entry)
-    
-    def _get_catalog(self) -> list[ProblemCatalogEntry]:
-        """Get the problem catalog, with caching."""
-        if self._catalog is not None:
-            return self._catalog
-        
-        # Check cache
-        cached = self.cache.get("leetcode", "catalog")
-        if cached:
-            self._catalog = [ProblemCatalogEntry(**p) for p in cached]
-            logger.debug(f"Loaded catalog from cache: {len(self._catalog)} problems")
-            return self._catalog
-        
-        # Fetch from API
-        self._catalog = self._fetch_catalog()
-        
-        # Cache for 24 hours
-        self.cache.set(
-            "leetcode",
-            "catalog",
-            [p.model_dump() for p in self._catalog],
-            ttl=86400
-        )
-        
-        return self._catalog
-    
-    def _fetch_catalog(self) -> list[ProblemCatalogEntry]:
-        """Fetch the problem catalog from LeetCode API."""
-        logger.info("Fetching LeetCode catalog...")
-        
-        try:
-            response = requests.get(LEETCODE_CATALOG_URL, timeout=30)
-            response.raise_for_status()
-            data = response.json()
-        except requests.RequestException as e:
-            raise LeetCodeError(f"Failed to fetch catalog: {e}")
-        
-        difficulty_map = {1: ProblemDifficulty.EASY, 2: ProblemDifficulty.MEDIUM, 3: ProblemDifficulty.HARD}
-        
-        catalog = []
-        for problem in data.get("stat_status_pairs", []):
-            stat = problem.get("stat", {})
-            diff = problem.get("difficulty", {})
-            
-            catalog.append(ProblemCatalogEntry(
-                slug=stat.get("question__title_slug", ""),
-                title=stat.get("question__title", ""),
-                difficulty=difficulty_map.get(diff.get("level", 2), ProblemDifficulty.MEDIUM),
-                paid_only=problem.get("paid_only", False),
-                acceptance_rate=stat.get("total_acs", 0) / max(stat.get("total_submitted", 1), 1) * 100
-            ))
-        
-        logger.info(f"Fetched {len(catalog)} problems")
-        return catalog
-    
-    def _filter_problems(
-        self,
-        catalog: list[ProblemCatalogEntry],
-        request: ProblemRequest
-    ) -> list[ProblemCatalogEntry]:
-        """Filter problems based on request criteria."""
-        filtered = []
-        
-        for problem in catalog:
-            # Filter by premium
-            if request.exclude_premium and problem.paid_only:
-                continue
-            
-            # Filter by difficulty
-            if problem.difficulty not in request.difficulties:
-                continue
-            
-            filtered.append(problem)
-        
-        return filtered
-    
-    def _fetch_problem(self, entry: ProblemCatalogEntry) -> LeetCodeProblem:
-        """Fetch full problem details."""
-        # Check cache
-        cached = self.cache.get("leetcode_problems", entry.slug)
-        if cached:
-            return LeetCodeProblem(**cached)
-        
-        # Fetch via GraphQL
-        try:
-            response = requests.post(
-                LEETCODE_GRAPHQL_URL,
-                json={
-                    "query": LEETCODE_GRAPHQL_QUERY,
-                    "variables": {"titleSlug": entry.slug}
-                },
-                timeout=30
-            )
-            response.raise_for_status()
-            data = response.json()
-        except requests.RequestException as e:
-            raise LeetCodeError(f"Failed to fetch problem {entry.slug}: {e}")
-        
-        question = data.get("data", {}).get("question", {})
-        
-        if not question:
-            raise LeetCodeError(f"Problem not found: {entry.slug}")
-        
-        # Parse HTML content
-        html_content = question.get("content", "")
-        statement = self._parse_html(html_content)
-        
-        # Extract topics
-        topics = [tag.get("name", "") for tag in question.get("topicTags", [])]
-        
-        # Extract hints
-        hints = question.get("hints", [])
-        
-        problem = LeetCodeProblem(
-            title=entry.title,
-            slug=entry.slug,
-            difficulty=entry.difficulty,
-            statement=statement,
-            topics=topics,
-            hints=hints,
-            acceptance_rate=entry.acceptance_rate
-        )
-        
-        # Cache problem
-        self.cache.set("leetcode_problems", entry.slug, problem.model_dump())
-        
-        return problem
-    
-    def _parse_html(self, html: str) -> str:
-        """Parse HTML content to clean text."""
-        if not html:
-            return ""
-        
-        soup = bs4.BeautifulSoup(html, "html.parser")
-        return soup.get_text("\n").strip()
-    
-    def get_stats(self) -> dict:
-        """Get service statistics."""
-        catalog_size = len(self._catalog) if self._catalog else 0
-        
-        return {
-            "catalog_loaded": self._catalog is not None,
-            "catalog_size": catalog_size,
-            "cache_stats": self.cache.get_stats()
-        }
-
-
-# Singleton instance
-_leetcode_service: Optional[LeetCodeService] = None
-
-
-def get_leetcode_service() -> LeetCodeService:
-    """Get the global LeetCode service instance."""
-    global _leetcode_service
-    if _leetcode_service is None:
-        _leetcode_service = LeetCodeService()
-    return _leetcode_service
-```
-
-### backend/services/lesson_service.py
+#### backend/services/lesson_service.py
 ```python
 """
 Lesson Generation Service
@@ -1303,7 +1797,7 @@ def get_lesson_service() -> LessonService:
     return _lesson_service
 ```
 
-### backend/services/paper_service.py
+#### backend/services/paper_service.py
 ```python
 """
 Paper Service
@@ -1592,13 +2086,396 @@ def get_paper_service() -> PaperService:
     return _paper_service
 ```
 
-### backend/services/teaching_service.py
+#### backend/services/query_service.py
 ```python
 """
-Teaching Service
+Query Enhancement Service
 
-Main orchestration service that combines paper retrieval, 
-lesson generation, and LeetCode functionality.
+Uses LLM to enhance user queries for better retrieval:
+- Expand with related terms
+- Detect user intent (explain, compare, simplify)
+- Infer difficulty level
+"""
+
+import json
+from typing import Optional
+from pydantic import BaseModel
+from openai import OpenAI
+
+from core.config import get_settings
+from core.logging import get_logger
+
+logger = get_logger(__name__)
+
+
+class EnhancedQuery(BaseModel):
+    """Enhanced query with metadata."""
+    original: str
+    enhanced: str
+    intent: str  # "explain", "compare", "summarize", "simplify", "deep_dive"
+    detected_difficulty: str  # "beginner", "intermediate", "advanced"
+    key_concepts: list[str]
+    is_comparison: bool = False
+
+
+class QueryService:
+    """
+    Enhance user queries for better retrieval.
+    
+    Features:
+    - Query expansion with related terms
+    - Intent detection (explain vs compare vs simplify)
+    - Difficulty inference from phrasing
+    - Key concept extraction
+    """
+    
+    SYSTEM_PROMPT = """You are a query enhancement system for an academic paper search engine.
+
+Given a user query about machine learning, AI, or computer science, analyze it and output JSON with:
+
+{
+    "enhanced": "expanded query with related technical terms for better search",
+    "intent": "one of: explain, compare, summarize, simplify, deep_dive",
+    "detected_difficulty": "one of: beginner, intermediate, advanced",
+    "key_concepts": ["list", "of", "3-5", "key", "concepts"],
+    "is_comparison": true/false
+}
+
+Intent Detection Rules:
+- "ELI5", "simply", "basics", "beginner", "intro" → intent: "simplify", difficulty: "beginner"
+- "Compare X vs Y", "difference between" → intent: "compare", is_comparison: true
+- "Deep dive", "in-depth", "technical details" → intent: "deep_dive", difficulty: "advanced"
+- "How does X work", "What is X" → intent: "explain"
+- "Summarize", "overview", "brief" → intent: "summarize"
+
+Query Enhancement Rules:
+- Add related technical terms that would appear in academic papers
+- Include synonyms and related concepts
+- Keep the enhanced query concise (under 15 words)
+
+Examples:
+- "ELI5 attention" → enhanced: "attention mechanism transformer neural network basics introduction"
+- "BERT vs GPT" → enhanced: "BERT GPT language model comparison pretraining architecture"
+- "How do transformers work" → enhanced: "transformer architecture self-attention encoder decoder mechanism"
+"""
+
+    def __init__(self):
+        self.settings = get_settings()
+        self.client = OpenAI(api_key=self.settings.openai_api_key)
+    
+    def enhance_query(self, query: str) -> EnhancedQuery:
+        """
+        Enhance a user query for better retrieval.
+        
+        Args:
+            query: Original user query
+            
+        Returns:
+            EnhancedQuery with expanded terms and metadata
+        """
+        try:
+            response = self.client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system", "content": self.SYSTEM_PROMPT},
+                    {"role": "user", "content": query}
+                ],
+                response_format={"type": "json_object"},
+                temperature=0.3,
+                max_tokens=300
+            )
+            
+            result = json.loads(response.choices[0].message.content)
+            
+            enhanced = EnhancedQuery(
+                original=query,
+                enhanced=result.get("enhanced", query),
+                intent=result.get("intent", "explain"),
+                detected_difficulty=result.get("detected_difficulty", "beginner"),
+                key_concepts=result.get("key_concepts", []),
+                is_comparison=result.get("is_comparison", False)
+            )
+            
+            logger.info(
+                f"Enhanced query: '{query[:30]}...' → intent={enhanced.intent}, "
+                f"difficulty={enhanced.detected_difficulty}"
+            )
+            
+            return enhanced
+            
+        except Exception as e:
+            logger.error(f"Query enhancement failed: {e}")
+            # Return basic enhancement on failure
+            return EnhancedQuery(
+                original=query,
+                enhanced=query,
+                intent="explain",
+                detected_difficulty="beginner",
+                key_concepts=query.split()[:5]
+            )
+    
+    def quick_intent_detection(self, query: str) -> tuple[str, str]:
+        """
+        Fast intent detection without LLM call.
+        
+        Returns:
+            (intent, difficulty)
+        """
+        query_lower = query.lower()
+        
+        # Simplify indicators
+        if any(word in query_lower for word in ["eli5", "simple", "basics", "beginner", "intro"]):
+            return "simplify", "beginner"
+        
+        # Comparison indicators
+        if any(word in query_lower for word in [" vs ", " versus ", "compare", "difference"]):
+            return "compare", "intermediate"
+        
+        # Deep dive indicators
+        if any(word in query_lower for word in ["deep dive", "in-depth", "technical", "advanced"]):
+            return "deep_dive", "advanced"
+        
+        # Summary indicators
+        if any(word in query_lower for word in ["summarize", "overview", "brief", "tldr"]):
+            return "summarize", "beginner"
+        
+        # Default
+        return "explain", "beginner"
+
+
+# Singleton instance
+_query_service: Optional[QueryService] = None
+
+
+def get_query_service() -> QueryService:
+    """Get singleton Query service instance."""
+    global _query_service
+    if _query_service is None:
+        _query_service = QueryService()
+    return _query_service
+```
+
+#### backend/services/scholar_service.py
+```python
+"""
+Semantic Scholar API Service
+
+Fetches academic papers dynamically when:
+- User query doesn't match existing papers well
+- Need to expand knowledge base
+
+API Docs: https://api.semanticscholar.org/
+Rate Limit: 100 requests per 5 minutes (free tier)
+"""
+
+import httpx
+from typing import Optional
+from datetime import date
+
+from core.config import get_settings
+from core.logging import get_logger
+
+logger = get_logger(__name__)
+
+
+class ScholarService:
+    """
+    Fetch academic papers from Semantic Scholar API.
+    
+    Features:
+    - Free API (no scraping needed)
+    - Structured data with abstracts
+    - ArXiv integration
+    - Rate limiting built-in
+    """
+    
+    BASE_URL = "https://api.semanticscholar.org/graph/v1"
+    
+    def __init__(self):
+        self.settings = get_settings()
+        self.client = httpx.Client(timeout=30.0)
+        self._daily_fetch_count = 0
+        self._last_reset_date = date.today()
+    
+    def _check_daily_limit(self) -> bool:
+        """Check and reset daily limit if needed."""
+        today = date.today()
+        if today > self._last_reset_date:
+            self._daily_fetch_count = 0
+            self._last_reset_date = today
+        
+        return self._daily_fetch_count < self.settings.max_daily_fetches
+    
+    def search_papers(
+        self,
+        query: str,
+        limit: int = 10,
+        year_min: Optional[int] = None
+    ) -> list[dict]:
+        """
+        Search for papers matching a query.
+        
+        Args:
+            query: Search query
+            limit: Max results (max 100)
+            year_min: Minimum publication year
+        
+        Returns:
+            List of paper objects with abstracts
+        """
+        if not self._check_daily_limit():
+            logger.warning(f"Daily fetch limit reached ({self.settings.max_daily_fetches})")
+            return []
+        
+        fields = [
+            "paperId",
+            "title",
+            "abstract",
+            "url",
+            "year",
+            "authors",
+            "citationCount",
+            "externalIds",
+            "openAccessPdf"
+        ]
+        
+        try:
+            params = {
+                "query": query,
+                "limit": min(limit, 100),
+                "fields": ",".join(fields)
+            }
+            
+            if year_min:
+                params["year"] = f"{year_min}-"
+            
+            # Add API key if available (higher rate limits)
+            headers = {}
+            if self.settings.semantic_scholar_api_key:
+                headers["x-api-key"] = self.settings.semantic_scholar_api_key
+            
+            response = self.client.get(
+                f"{self.BASE_URL}/paper/search",
+                params=params,
+                headers=headers
+            )
+            response.raise_for_status()
+            
+            data = response.json()
+            papers = data.get("data", [])
+            
+            # Filter: must have abstract for embedding
+            papers_with_abstracts = [
+                p for p in papers
+                if p.get("abstract") and len(p.get("abstract", "")) > 100
+            ]
+            
+            self._daily_fetch_count += 1
+            logger.info(
+                f"Fetched {len(papers_with_abstracts)}/{len(papers)} papers "
+                f"for query: '{query[:50]}...' (daily: {self._daily_fetch_count}/{self.settings.max_daily_fetches})"
+            )
+            
+            return papers_with_abstracts
+            
+        except httpx.HTTPStatusError as e:
+            if e.response.status_code == 429:
+                logger.warning("Semantic Scholar rate limit hit, backing off")
+            else:
+                logger.error(f"Semantic Scholar API error: {e}")
+            return []
+        except Exception as e:
+            logger.error(f"Semantic Scholar error: {e}")
+            return []
+    
+    def get_paper_by_id(self, paper_id: str) -> Optional[dict]:
+        """Get a specific paper by Semantic Scholar ID."""
+        try:
+            response = self.client.get(
+                f"{self.BASE_URL}/paper/{paper_id}",
+                params={
+                    "fields": "paperId,title,abstract,url,year,authors,externalIds,openAccessPdf"
+                }
+            )
+            response.raise_for_status()
+            return response.json()
+        except httpx.HTTPError:
+            return None
+    
+    def get_paper_by_arxiv_id(self, arxiv_id: str) -> Optional[dict]:
+        """Get a paper by ArXiv ID."""
+        try:
+            response = self.client.get(
+                f"{self.BASE_URL}/paper/arXiv:{arxiv_id}",
+                params={
+                    "fields": "paperId,title,abstract,url,year,authors,externalIds"
+                }
+            )
+            response.raise_for_status()
+            return response.json()
+        except httpx.HTTPError:
+            return None
+    
+    @staticmethod
+    def extract_arxiv_id(paper: dict) -> Optional[str]:
+        """Extract ArXiv ID from paper data."""
+        external_ids = paper.get("externalIds", {})
+        return external_ids.get("ArXiv")
+    
+    @staticmethod
+    def get_arxiv_url(paper: dict) -> Optional[str]:
+        """Get ArXiv URL if available."""
+        arxiv_id = ScholarService.extract_arxiv_id(paper)
+        if arxiv_id:
+            return f"https://arxiv.org/abs/{arxiv_id}"
+        return paper.get("url")
+    
+    @staticmethod
+    def get_pdf_url(paper: dict) -> Optional[str]:
+        """Get PDF URL if available."""
+        # Try open access PDF first
+        open_access = paper.get("openAccessPdf", {})
+        if open_access and open_access.get("url"):
+            return open_access["url"]
+        
+        # Try ArXiv PDF
+        arxiv_id = ScholarService.extract_arxiv_id(paper)
+        if arxiv_id:
+            return f"https://arxiv.org/pdf/{arxiv_id}.pdf"
+        
+        return None
+    
+    def get_daily_stats(self) -> dict:
+        """Get daily usage statistics."""
+        return {
+            "fetches_today": self._daily_fetch_count,
+            "max_daily": self.settings.max_daily_fetches,
+            "remaining": self.settings.max_daily_fetches - self._daily_fetch_count
+        }
+
+
+# Singleton instance
+_scholar_service: Optional[ScholarService] = None
+
+
+def get_scholar_service() -> ScholarService:
+    """Get singleton Scholar service instance."""
+    global _scholar_service
+    if _scholar_service is None:
+        _scholar_service = ScholarService()
+    return _scholar_service
+```
+
+#### backend/services/teaching_service.py
+```python
+"""
+Teaching Service v2
+
+Main orchestration service with:
+- Relevance threshold checking
+- Dynamic paper fetching
+- Query enhancement integration
+- Removed LeetCode dependency
 """
 
 import time
@@ -1614,40 +2491,62 @@ from models.lesson import (
     FullLesson,
     StreamingLessonChunk,
 )
-from models.problem import ProblemRequest, ProblemResponse, LeetCodeProblem
 from services.paper_service import get_paper_service
 from services.lesson_service import get_lesson_service
-from services.leetcode_service import get_leetcode_service
 from services.cache_service import get_cache_service
+from services.query_service import get_query_service, EnhancedQuery
+from services.scholar_service import get_scholar_service
+from services.embedding_service import get_embedding_service
 
 logger = get_logger(__name__)
 
 
+class NoRelevantPapersError(Exception):
+    """Raised when no relevant papers found for a query."""
+    pass
+
+
 class TeachingService:
     """
-    Main teaching service that orchestrates all functionality.
+    Main teaching service v2 that orchestrates all functionality.
     
-    This is the primary entry point for:
-    - Teaching about research topics
-    - Generating lessons from papers
-    - Providing coding practice
+    New in v2:
+    - Relevance threshold checking (0.50/0.35/0.20)
+    - Dynamic paper fetching from Semantic Scholar
+    - Query enhancement for better search
+    - Removed LeetCode integration
     """
     
     def __init__(self):
         self.settings = get_settings()
         self.paper_service = get_paper_service()
         self.lesson_service = get_lesson_service()
-        self.leetcode_service = get_leetcode_service()
         self.cache = get_cache_service()
+        self.query_service = get_query_service()
+        self.scholar_service = get_scholar_service()
+        self.embedding_service = get_embedding_service()
         
-        logger.info("Teaching service initialized")
+        logger.info(
+            f"Teaching service v2 initialized: "
+            f"thresholds=({self.settings.high_relevance_threshold}/"
+            f"{self.settings.medium_relevance_threshold}), "
+            f"dynamic_fetch={self.settings.dynamic_fetch_enabled}"
+        )
     
-    def teach(self, request: LessonRequest) -> LessonResponse:
+    def teach(self, request: LessonRequest, use_enhancement: bool = True) -> LessonResponse:
         """
-        Main teaching endpoint - finds relevant paper and generates lesson.
+        Main teaching endpoint v2.
+        
+        Flow:
+        1. Enhance query (detect intent, difficulty)
+        2. Search for relevant paper
+        3. Check relevance threshold
+        4. Dynamic fetch if needed
+        5. Generate lesson
         
         Args:
             request: Lesson request with query and preferences
+            use_enhancement: Whether to use LLM query enhancement
             
         Returns:
             Complete lesson response
@@ -1655,23 +2554,50 @@ class TeachingService:
         start_time = time.time()
         
         try:
-            # Search for relevant paper
-            logger.info(f"Teaching request: {request.query[:50]}...")
-            search_results = self.paper_service.search(request.query, top_k=1)
+            query = request.query
+            logger.info(f"Teaching request v2: {query[:50]}...")
+            
+            # Step 1: Enhance query
+            if use_enhancement:
+                enhanced = self.query_service.enhance_query(query)
+                search_query = enhanced.enhanced
+                detected_difficulty = enhanced.detected_difficulty
+                logger.info(f"Enhanced: '{query[:30]}' → '{search_query[:50]}' (intent={enhanced.intent})")
+            else:
+                search_query = query
+                detected_difficulty = request.difficulty.value if request.difficulty else "beginner"
+            
+            # Step 2: Search for papers
+            search_results = self.paper_service.search(search_query, top_k=3)
             
             if not search_results:
-                raise PaperNotFoundError(request.query)
+                raise PaperNotFoundError(query)
             
             best_result = search_results[0]
-            logger.info(f"Found paper: {best_result.paper.arxiv_id} (score: {best_result.similarity_score:.2f})")
+            best_score = best_result.similarity_score
+            logger.info(f"Initial search: {best_result.paper.arxiv_id} (score: {best_score:.3f})")
             
-            # Get full paper
+            # Step 3: Handle relevance threshold
+            final_result = self._handle_relevance(
+                query=query,
+                search_query=search_query,
+                search_results=search_results,
+                best_score=best_score
+            )
+            
+            if final_result is None:
+                raise NoRelevantPapersError(
+                    f"No relevant papers found for: {query}. "
+                    f"Best match score: {best_score:.2f} (threshold: {self.settings.medium_relevance_threshold})"
+                )
+            
+            # Step 4: Get full paper
             paper = self.paper_service.get_paper(
-                str(best_result.paper.url),
+                str(final_result.paper.url),
                 use_grobid=self.settings.use_grobid
             )
             
-            # Generate lesson
+            # Step 5: Generate lesson
             lesson = self.lesson_service.generate_lesson(paper, request)
             
             processing_time = int((time.time() - start_time) * 1000)
@@ -1680,6 +2606,15 @@ class TeachingService:
                 success=True,
                 lesson=lesson,
                 cached=False,
+                processing_time_ms=processing_time
+            )
+            
+        except NoRelevantPapersError as e:
+            logger.warning(f"No relevant papers: {e}")
+            processing_time = int((time.time() - start_time) * 1000)
+            return LessonResponse(
+                success=False,
+                error=str(e),
                 processing_time_ms=processing_time
             )
             
@@ -1693,27 +2628,191 @@ class TeachingService:
                 processing_time_ms=processing_time
             )
     
+    def _handle_relevance(
+        self,
+        query: str,
+        search_query: str,
+        search_results: list[PaperSearchResult],
+        best_score: float
+    ) -> Optional[PaperSearchResult]:
+        """
+        Handle relevance-based routing.
+        
+        - High relevance (>= 0.50): Use directly
+        - Medium relevance (0.35-0.50): Use but try to improve
+        - Low relevance (< 0.35): Must find new papers
+        
+        Returns:
+            Best PaperSearchResult or None if no good match
+        """
+        settings = self.settings
+        
+        # High relevance - use directly
+        if best_score >= settings.high_relevance_threshold:
+            logger.info(f"✓ High relevance ({best_score:.2f} >= {settings.high_relevance_threshold})")
+            return search_results[0]
+        
+        # Medium relevance - try to improve silently
+        if best_score >= settings.medium_relevance_threshold:
+            logger.info(f"~ Medium relevance ({best_score:.2f}), attempting to improve")
+            
+            if settings.dynamic_fetch_enabled:
+                new_papers = self._fetch_and_add_papers(query)
+                
+                if new_papers:
+                    # Re-search with new papers
+                    new_results = self.paper_service.search(search_query, top_k=3)
+                    if new_results and new_results[0].similarity_score > best_score:
+                        logger.info(f"✓ Found better match: {new_results[0].similarity_score:.2f}")
+                        return new_results[0]
+            
+            # Use original if no improvement
+            logger.info(f"Using original medium-relevance match")
+            return search_results[0]
+        
+        # Low relevance - must fetch new papers
+        logger.info(f"✗ Low relevance ({best_score:.2f} < {settings.medium_relevance_threshold})")
+        
+        if not settings.dynamic_fetch_enabled:
+            logger.warning("Dynamic fetch disabled, using low-relevance match")
+            return search_results[0]
+        
+        new_papers = self._fetch_and_add_papers(query)
+        
+        if new_papers:
+            # Re-search
+            new_results = self.paper_service.search(search_query, top_k=3)
+            
+            if new_results:
+                new_score = new_results[0].similarity_score
+                if new_score >= settings.medium_relevance_threshold:
+                    logger.info(f"✓ Found relevant paper after fetch: {new_score:.2f}")
+                    return new_results[0]
+                else:
+                    logger.warning(f"Still low relevance after fetch: {new_score:.2f}")
+                    return new_results[0]  # Return best available
+        
+        # No improvement possible
+        logger.warning("No new papers found, returning None")
+        return None
+    
+    def _fetch_and_add_papers(self, query: str) -> list[dict]:
+        """
+        Fetch papers from Semantic Scholar and add to index.
+        
+        Returns:
+            List of newly added papers
+        """
+        logger.info(f"Fetching papers from Semantic Scholar for: {query[:30]}...")
+        
+        # Fetch from Semantic Scholar
+        papers = self.scholar_service.search_papers(
+            query=query,
+            limit=self.settings.max_papers_per_fetch
+        )
+        
+        if not papers:
+            logger.info("No papers found from Semantic Scholar")
+            return []
+        
+        # Prepare for indexing
+        new_papers = []
+        
+        for paper in papers:
+            paper_id = paper.get("paperId")
+            abstract = paper.get("abstract", "")
+            title = paper.get("title", "")
+            
+            if not abstract or not paper_id:
+                continue
+            
+            try:
+                # Create embedding
+                embedding = self.embedding_service.create_embedding(abstract)
+                
+                # Get URL
+                url = self.scholar_service.get_arxiv_url(paper)
+                if not url:
+                    url = f"https://www.semanticscholar.org/paper/{paper_id}"
+                
+                new_papers.append({
+                    "id": f"semantic_{paper_id}",
+                    "embedding": embedding,
+                    "url": url,
+                    "title": title,
+                    "abstract": abstract[:1000],
+                    "source": "semantic_scholar",
+                    "year": paper.get("year"),
+                    "citation_count": paper.get("citationCount", 0)
+                })
+                
+            except Exception as e:
+                logger.warning(f"Failed to process paper {paper_id}: {e}")
+        
+        # Add to embedding service index
+        if new_papers:
+            added = self._add_papers_to_index(new_papers)
+            logger.info(f"Dynamically added {added} papers for: {query[:30]}...")
+        
+        return new_papers
+    
+    def _add_papers_to_index(self, papers: list[dict]) -> int:
+        """Add papers to the FAISS index."""
+        import numpy as np
+        import json
+        import faiss
+        
+        try:
+            # Get current index and URLs
+            index = self.embedding_service.index
+            urls = list(self.embedding_service.urls)
+            
+            # Stack new embeddings
+            embeddings = np.vstack([p["embedding"] for p in papers]).astype("float32")
+            
+            # Add to index
+            index.add(embeddings)
+            
+            # Add URLs
+            for paper in papers:
+                urls.append(paper["url"])
+            
+            # Update service state
+            self.embedding_service._urls = urls
+            
+            # Save to disk
+            faiss.write_index(index, str(self.settings.faiss_index_path))
+            with open(self.settings.urls_json_path, "w") as f:
+                json.dump(urls, f)
+            
+            logger.info(f"Index updated: {index.ntotal} total vectors")
+            return len(papers)
+            
+        except Exception as e:
+            logger.error(f"Failed to add papers to index: {e}")
+            return 0
+    
     async def teach_streaming(
         self,
         request: LessonRequest
     ) -> AsyncGenerator[StreamingLessonChunk, None]:
         """
         Streaming teaching endpoint - yields chunks as they're generated.
-        
-        Args:
-            request: Lesson request
-            
-        Yields:
-            Streaming lesson chunks
         """
         try:
+            query = request.query
+            
+            # Enhance query
+            enhanced = self.query_service.enhance_query(query)
+            search_query = enhanced.enhanced
+            
             # Search for paper
-            search_results = self.paper_service.search(request.query, top_k=1)
+            search_results = self.paper_service.search(search_query, top_k=1)
             
             if not search_results:
                 yield StreamingLessonChunk(
                     type="error",
-                    data={"message": f"No papers found for: {request.query}"}
+                    data={"message": f"No papers found for: {query}"}
                 )
                 return
             
@@ -1736,60 +2835,17 @@ class TeachingService:
                 data={"message": str(e)}
             )
     
-    def get_coding_problem(self, request: Optional[ProblemRequest] = None) -> ProblemResponse:
-        """
-        Get a coding problem for practice.
-        
-        Args:
-            request: Problem request criteria
-            
-        Returns:
-            Problem response
-        """
-        start_time = time.time()
-        
-        try:
-            problem = self.leetcode_service.get_random_problem(request)
-            processing_time = int((time.time() - start_time) * 1000)
-            
-            return ProblemResponse(
-                success=True,
-                problem=problem,
-                processing_time_ms=processing_time
-            )
-            
-        except Exception as e:
-            logger.error(f"Failed to get coding problem: {e}")
-            processing_time = int((time.time() - start_time) * 1000)
-            
-            return ProblemResponse(
-                success=False,
-                error=str(e),
-                processing_time_ms=processing_time
-            )
-    
     def search_papers(self, query: str, top_k: int = 5) -> list[PaperSearchResult]:
         """
         Search for papers without generating lessons.
-        
-        Args:
-            query: Search query
-            top_k: Number of results
-            
-        Returns:
-            List of search results
         """
-        return self.paper_service.search(query, top_k=top_k)
+        # Enhance query first
+        enhanced = self.query_service.enhance_query(query)
+        return self.paper_service.search(enhanced.enhanced, top_k=top_k)
     
     def get_paper_details(self, url: str) -> ParsedPaper:
         """
         Get full paper details.
-        
-        Args:
-            url: Paper URL
-            
-        Returns:
-            Parsed paper
         """
         return self.paper_service.get_paper(url)
     
@@ -1797,8 +2853,15 @@ class TeachingService:
         """Get service statistics."""
         return {
             "paper_service": self.paper_service.get_stats(),
-            "leetcode_service": self.leetcode_service.get_stats(),
-            "cache": self.cache.get_stats()
+            "scholar_service": self.scholar_service.get_daily_stats(),
+            "cache": self.cache.get_stats(),
+            "thresholds": {
+                "high": self.settings.high_relevance_threshold,
+                "medium": self.settings.medium_relevance_threshold,
+                "low": self.settings.low_relevance_threshold
+            },
+            "dynamic_fetch_enabled": self.settings.dynamic_fetch_enabled,
+            "index_size": self.embedding_service.index.ntotal if self.embedding_service._index else 0
         }
 
 
@@ -1814,20 +2877,178 @@ def get_teaching_service() -> TeachingService:
     return _teaching_service
 ```
 
-### backend/api/routes/__init__.py
+### 2.4 API
+
+#### backend/api/main.py
 ```python
 """
-API Routes Package
+FastAPI Application v2
+
+Main entry point for the LLM Teaching Assistant API.
+
+Changes in v2:
+- Removed LeetCode routes
+- Updated description
+"""
+
+import time
+from contextlib import asynccontextmanager
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+
+from core.config import get_settings
+from core.logging import get_logger
+from core.exceptions import BaseAppException
+from api.routes import teach, health
+
+logger = get_logger(__name__)
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Application lifespan handler."""
+    # Startup
+    settings = get_settings()
+    logger.info(f"Starting {settings.app_name} v{settings.app_version}")
+    logger.info(f"Debug mode: {settings.debug}")
+    logger.info(f"Dynamic fetch: {settings.dynamic_fetch_enabled}")
+    logger.info(f"Thresholds: high={settings.high_relevance_threshold}, medium={settings.medium_relevance_threshold}")
+    
+    yield
+    
+    # Shutdown
+    logger.info("Shutting down...")
+
+
+def create_app() -> FastAPI:
+    """Create and configure the FastAPI application."""
+    settings = get_settings()
+    
+    app = FastAPI(
+        title=settings.app_name,
+        version=settings.app_version,
+        description="""
+        🎓 **LLM Teaching Assistant API v2**
+        
+        An AI-powered teaching assistant that:
+        - Retrieves and explains research papers from arXiv
+        - Converts academic content into beginner-friendly lessons
+        - **Dynamically fetches new papers** when no good match exists
+        - **Enhances queries** for better search results
+        
+        ## What's New in v2
+        
+        - **Relevance Thresholds**: Only uses papers above quality threshold
+        - **Dynamic Fetching**: Searches Semantic Scholar when needed
+        - **Query Enhancement**: LLM improves search queries
+        - **Intent Detection**: Adapts to explain/compare/simplify requests
+        
+        ## Quick Start
+        
+        ```python
+        import requests
+        
+        # Generate a lesson
+        response = requests.post(
+            "http://localhost:8000/api/v1/teach",
+            json={"query": "Explain attention mechanisms"}
+        )
+        lesson = response.json()
+        ```
+        
+        ## Endpoints
+        
+        - `POST /api/v1/teach` - Generate a lesson
+        - `POST /api/v1/teach/stream` - Stream lesson generation
+        - `GET /api/v1/stats` - Service statistics
+        - `GET /health` - Health check
+        """,
+        docs_url="/docs",
+        redoc_url="/redoc",
+        openapi_url="/openapi.json",
+        lifespan=lifespan
+    )
+    
+    # CORS middleware
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],  # Configure for production
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+    
+    # Request timing middleware
+    @app.middleware("http")
+    async def add_timing_header(request: Request, call_next):
+        start_time = time.time()
+        response = await call_next(request)
+        process_time = time.time() - start_time
+        response.headers["X-Process-Time"] = str(process_time)
+        return response
+    
+    # Exception handler
+    @app.exception_handler(BaseAppException)
+    async def app_exception_handler(request: Request, exc: BaseAppException):
+        logger.error(f"Application error: {exc.code} - {exc.message}")
+        return JSONResponse(
+            status_code=exc.status_code,
+            content=exc.to_dict()
+        )
+    
+    # Generic exception handler
+    @app.exception_handler(Exception)
+    async def generic_exception_handler(request: Request, exc: Exception):
+        logger.error(f"Unhandled error: {exc}", exc_info=True)
+        return JSONResponse(
+            status_code=500,
+            content={
+                "error": {
+                    "code": "INTERNAL_ERROR",
+                    "message": "An unexpected error occurred"
+                }
+            }
+        )
+    
+    # Include routers
+    app.include_router(health.router, tags=["Health"])
+    app.include_router(teach.router, prefix=settings.api_prefix, tags=["Teaching"])
+    
+    return app
+
+
+# Create application instance
+app = create_app()
+
+
+if __name__ == "__main__":
+    import uvicorn
+    settings = get_settings()
+    uvicorn.run(
+        "api.main:app",
+        host=settings.api_host,
+        port=settings.api_port,
+        reload=settings.debug
+    )
+```
+
+#### backend/api/routes/__init__.py
+```python
+"""
+API Routes Package v2
+
+Changes:
+- Removed leetcode routes
 """
 
 from . import health
 from . import teach
-from . import leetcode
 
-__all__ = ["health", "teach", "leetcode"]
+__all__ = ["health", "teach"]
 ```
 
-### backend/api/routes/health.py
+#### backend/api/routes/health.py
 ```python
 """
 Health Check Routes
@@ -1913,759 +3134,324 @@ async def root():
     }
 ```
 
-### backend/api/routes/leetcode.py
+#### backend/api/routes/teach.py
 ```python
 """
-LeetCode Routes
+Teaching API Routes v2
 
-Endpoints for coding practice.
-"""
+Endpoints:
+- POST /teach - Generate lesson (with query enhancement)
+- POST /teach/stream - Stream lesson generation
+- GET /stats - Service statistics
+- POST /search - Search papers
 
-from typing import Optional, List
-from fastapi import APIRouter, Query
-from pydantic import BaseModel, Field
-
-from core.logging import get_logger
-from models.problem import ProblemRequest, ProblemResponse, ProblemDifficulty
-from services.teaching_service import get_teaching_service
-
-router = APIRouter()
-logger = get_logger(__name__)
-
-
-class CodingProblemRequest(BaseModel):
-    """Request for a coding problem."""
-    difficulties: List[ProblemDifficulty] = Field(
-        default=[ProblemDifficulty.MEDIUM, ProblemDifficulty.HARD],
-        description="Allowed difficulty levels"
-    )
-    exclude_premium: bool = Field(True, description="Exclude premium problems")
-    
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "difficulties": ["Medium", "Hard"],
-                "exclude_premium": True
-            }
-        }
-
-
-@router.post("/leetcode/random", response_model=ProblemResponse)
-async def get_random_problem(request: Optional[CodingProblemRequest] = None):
-    """
-    Get a random LeetCode problem for practice.
-    
-    By default, returns Medium or Hard problems (non-premium).
-    
-    Returns:
-        Random problem with statement and metadata
-    """
-    request = request or CodingProblemRequest()
-    logger.info(f"LeetCode request: difficulties={request.difficulties}")
-    
-    teaching_service = get_teaching_service()
-    
-    problem_request = ProblemRequest(
-        difficulties=request.difficulties,
-        exclude_premium=request.exclude_premium
-    )
-    
-    return teaching_service.get_coding_problem(problem_request)
-
-
-@router.get("/leetcode/problem/{slug}", response_model=ProblemResponse)
-async def get_problem_by_slug(slug: str):
-    """
-    Get a specific LeetCode problem by slug.
-    
-    Args:
-        slug: Problem URL slug (e.g., "two-sum")
-        
-    Returns:
-        The requested problem
-    """
-    logger.info(f"LeetCode slug request: {slug}")
-    
-    teaching_service = get_teaching_service()
-    
-    try:
-        problem = teaching_service.leetcode_service.get_problem_by_slug(slug)
-        return ProblemResponse(success=True, problem=problem)
-    except Exception as e:
-        return ProblemResponse(success=False, error=str(e))
-```
-
-### backend/api/routes/teach.py
-```python
-"""
-Teaching Routes
-
-Endpoints for lesson generation and paper search.
+Changes in v2:
+- Added /stats endpoint
+- Added /search endpoint
+- Query enhancement by default
 """
 
 import json
 from typing import Optional
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 from core.logging import get_logger
+from core.exceptions import PaperNotFoundError
 from models.lesson import LessonRequest, LessonResponse, LessonDifficulty
-from models.paper import PaperSearchRequest
 from services.teaching_service import get_teaching_service
 
-router = APIRouter()
 logger = get_logger(__name__)
 
-
-class TeachRequest(BaseModel):
-    """Request to learn about a topic."""
-    query: str = Field(..., min_length=3, max_length=500, description="What do you want to learn?")
-    difficulty: LessonDifficulty = Field(LessonDifficulty.BEGINNER, description="Lesson difficulty")
-    include_examples: bool = Field(True, description="Include examples")
-    include_math: bool = Field(True, description="Include step-by-step math")
-    max_sections: Optional[int] = Field(None, ge=1, le=20, description="Limit sections")
-    
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "query": "attention mechanisms in transformers",
-                "difficulty": "beginner",
-                "include_examples": True,
-                "include_math": True
-            }
-        }
+router = APIRouter()
 
 
 class SearchRequest(BaseModel):
-    """Request to search for papers."""
-    query: str = Field(..., min_length=3, max_length=500)
-    top_k: int = Field(5, ge=1, le=20)
+    """Search request model."""
+    query: str
+    top_k: int = 5
+
+
+class SearchResponse(BaseModel):
+    """Search response model."""
+    success: bool
+    query: str
+    results: list[dict]
 
 
 @router.post("/teach", response_model=LessonResponse)
-async def teach(request: TeachRequest):
+async def generate_lesson(request: LessonRequest):
     """
-    Generate a lesson about a topic.
+    Generate a lesson for a query.
     
-    This endpoint:
-    1. Searches for the most relevant research paper
-    2. Parses the paper into sections
-    3. Generates beginner-friendly explanations for each section
+    v2 Features:
+    - Automatically enhances query for better search
+    - Checks relevance threshold (0.50/0.35)
+    - Dynamically fetches papers if no good match
     
+    Args:
+        request: LessonRequest with query and preferences
+        
     Returns:
-        Complete lesson with all sections
+        LessonResponse with generated lesson or error
     """
-    logger.info(f"Teach request: {request.query[:50]}...")
+    logger.info(f"POST /teach: {request.query[:50]}...")
     
-    teaching_service = get_teaching_service()
-    
-    lesson_request = LessonRequest(
-        query=request.query,
-        difficulty=request.difficulty,
-        include_examples=request.include_examples,
-        include_math=request.include_math,
-        max_sections=request.max_sections
-    )
-    
-    return teaching_service.teach(lesson_request)
+    try:
+        teaching_service = get_teaching_service()
+        response = teaching_service.teach(request)
+        return response
+        
+    except Exception as e:
+        logger.error(f"Lesson generation failed: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @router.post("/teach/stream")
-async def teach_streaming(request: TeachRequest):
+async def stream_lesson(request: LessonRequest):
     """
-    Generate a lesson with streaming responses.
+    Stream lesson generation via Server-Sent Events.
     
-    Returns Server-Sent Events (SSE) as sections are generated.
-    
-    Event types:
-    - `metadata`: Paper information
-    - `section`: Generated lesson section
-    - `done`: Generation complete
-    - `error`: Error occurred
+    Yields chunks as sections are generated.
     """
-    logger.info(f"Streaming teach request: {request.query[:50]}...")
+    logger.info(f"POST /teach/stream: {request.query[:50]}...")
     
     teaching_service = get_teaching_service()
     
-    lesson_request = LessonRequest(
-        query=request.query,
-        difficulty=request.difficulty,
-        include_examples=request.include_examples,
-        include_math=request.include_math,
-        max_sections=request.max_sections
-    )
-    
     async def event_generator():
-        async for chunk in teaching_service.teach_streaming(lesson_request):
+        async for chunk in teaching_service.teach_streaming(request):
             yield f"data: {json.dumps(chunk.model_dump())}\n\n"
     
     return StreamingResponse(
         event_generator(),
-        media_type="text/event-stream",
-        headers={
-            "Cache-Control": "no-cache",
-            "Connection": "keep-alive",
-        }
+        media_type="text/event-stream"
     )
 
 
-@router.post("/search")
+@router.post("/search", response_model=SearchResponse)
 async def search_papers(request: SearchRequest):
     """
-    Search for relevant papers.
+    Search for papers without generating lessons.
     
-    Returns a list of papers matching the query, ranked by relevance.
+    Useful for:
+    - Previewing available papers
+    - Checking relevance scores
+    - Exploring the index
     """
-    logger.info(f"Search request: {request.query[:50]}...")
+    logger.info(f"POST /search: {request.query[:50]}...")
     
-    teaching_service = get_teaching_service()
-    results = teaching_service.search_papers(request.query, top_k=request.top_k)
-    
-    return {
-        "query": request.query,
-        "results": [r.model_dump() for r in results],
-        "count": len(results)
-    }
-
-
-@router.get("/paper")
-async def get_paper(
-    url: str = Query(..., description="arXiv paper URL")
-):
-    """
-    Get detailed information about a specific paper.
-    
-    Returns parsed paper with sections.
-    """
-    logger.info(f"Paper request: {url}")
-    
-    teaching_service = get_teaching_service()
-    paper = teaching_service.get_paper_details(url)
-    
-    return paper.model_dump()
-```
-
-### backend/models/__init__.py
-```python
-"""
-Data Models Package
-
-Pydantic models for all data structures.
-"""
-
-from .paper import (
-    PaperMetadata,
-    PaperSection,
-    ParsedPaper,
-    PaperSearchResult,
-    PaperSearchRequest,
-)
-from .lesson import (
-    LessonDifficulty,
-    LessonFragment,
-    FullLesson,
-    LessonRequest,
-    LessonResponse,
-    StreamingLessonChunk,
-)
-from .problem import (
-    ProblemDifficulty,
-    LeetCodeProblem,
-    ProblemRequest,
-    ProblemResponse,
-    ProblemCatalogEntry,
-)
-
-__all__ = [
-    # Paper models
-    "PaperMetadata",
-    "PaperSection",
-    "ParsedPaper",
-    "PaperSearchResult",
-    "PaperSearchRequest",
-    # Lesson models
-    "LessonDifficulty",
-    "LessonFragment",
-    "FullLesson",
-    "LessonRequest",
-    "LessonResponse",
-    "StreamingLessonChunk",
-    # Problem models
-    "ProblemDifficulty",
-    "LeetCodeProblem",
-    "ProblemRequest",
-    "ProblemResponse",
-    "ProblemCatalogEntry",
-]
-```
-
-### backend/models/lesson.py
-```python
-"""
-Lesson Data Models
-
-Pydantic models for lesson-related data structures.
-"""
-
-from datetime import datetime
-from typing import Optional
-from enum import Enum
-from pydantic import BaseModel, Field
-
-
-class LessonDifficulty(str, Enum):
-    """Lesson difficulty levels."""
-    BEGINNER = "beginner"
-    INTERMEDIATE = "intermediate"
-    ADVANCED = "advanced"
-
-
-class LessonFragment(BaseModel):
-    """A single lesson fragment from a paper section."""
-    
-    section_name: str = Field(..., description="Original section name")
-    content: str = Field(..., description="Beginner-friendly lesson content")
-    order: int = Field(..., description="Order in the full lesson")
-    has_math: bool = Field(False, description="Whether section includes math")
-    has_code: bool = Field(False, description="Whether section includes code")
-    estimated_read_time: int = Field(0, description="Estimated read time in minutes")
-    
-    def __init__(self, **data):
-        super().__init__(**data)
-        if self.estimated_read_time == 0:
-            # Average reading speed: 200 words per minute
-            word_count = len(self.content.split())
-            self.estimated_read_time = max(1, word_count // 200)
-
-
-class FullLesson(BaseModel):
-    """A complete lesson generated from a paper."""
-    
-    paper_id: str = Field(..., description="Source paper arXiv ID")
-    paper_title: str = Field(..., description="Source paper title")
-    paper_url: str = Field(..., description="Source paper URL")
-    query: str = Field(..., description="Original user query")
-    
-    fragments: list[LessonFragment] = Field(default_factory=list)
-    
-    difficulty: LessonDifficulty = Field(LessonDifficulty.BEGINNER)
-    total_read_time: int = Field(0, description="Total estimated read time")
-    
-    generated_at: datetime = Field(default_factory=datetime.utcnow)
-    generation_time_seconds: float = Field(0, description="Time to generate")
-    
-    def __init__(self, **data):
-        super().__init__(**data)
-        if self.total_read_time == 0 and self.fragments:
-            self.total_read_time = sum(f.estimated_read_time for f in self.fragments)
-    
-    @property
-    def full_content(self) -> str:
-        """Get the full lesson as a single string."""
-        parts = []
-        for fragment in sorted(self.fragments, key=lambda f: f.order):
-            parts.append(f"## {fragment.section_name.title()}\n\n{fragment.content}")
-        return "\n\n---\n\n".join(parts)
-    
-    @property
-    def table_of_contents(self) -> list[str]:
-        """Get section names as table of contents."""
-        return [f.section_name.title() for f in sorted(self.fragments, key=lambda f: f.order)]
-
-
-class LessonRequest(BaseModel):
-    """Request to generate a lesson."""
-    
-    query: str = Field(..., min_length=3, max_length=500, description="What to learn about")
-    difficulty: LessonDifficulty = Field(LessonDifficulty.BEGINNER)
-    include_examples: bool = Field(True, description="Include examples in explanations")
-    include_math: bool = Field(True, description="Include step-by-step math")
-    max_sections: Optional[int] = Field(None, ge=1, le=20, description="Limit sections")
-    
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "query": "attention mechanisms in transformers",
-                "difficulty": "beginner",
-                "include_examples": True,
-                "include_math": True
-            }
-        }
-
-
-class LessonResponse(BaseModel):
-    """Response containing a generated lesson."""
-    
-    success: bool = Field(True)
-    lesson: Optional[FullLesson] = None
-    error: Optional[str] = None
-    
-    # Metadata
-    cached: bool = Field(False, description="Whether result was from cache")
-    processing_time_ms: int = Field(0, description="Processing time in milliseconds")
-
-
-class StreamingLessonChunk(BaseModel):
-    """A chunk of a streaming lesson response."""
-    
-    type: str = Field(..., description="Chunk type: 'metadata', 'section', 'done', 'error'")
-    data: dict = Field(default_factory=dict)
-    
-    class Config:
-        json_schema_extra = {
-            "examples": [
-                {"type": "metadata", "data": {"paper_title": "Attention Is All You Need", "total_sections": 5}},
-                {"type": "section", "data": {"name": "Introduction", "content": "Let's start..."}},
-                {"type": "done", "data": {"total_time_seconds": 45.2}},
-                {"type": "error", "data": {"message": "Failed to process"}}
-            ]
-        }
-```
-
-### backend/models/paper.py
-```python
-"""
-Paper Data Models
-
-Pydantic models for paper-related data structures.
-"""
-
-from datetime import datetime
-from typing import Optional
-from pydantic import BaseModel, Field, HttpUrl
-
-
-class PaperMetadata(BaseModel):
-    """Metadata for a research paper."""
-    
-    arxiv_id: str = Field(..., description="arXiv paper ID")
-    title: str = Field(..., description="Paper title")
-    url: HttpUrl = Field(..., description="Paper URL")
-    abstract: Optional[str] = Field(None, description="Paper abstract")
-    authors: list[str] = Field(default_factory=list, description="Paper authors")
-    categories: list[str] = Field(default_factory=list, description="arXiv categories")
-    published_date: Optional[datetime] = Field(None, description="Publication date")
-    
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "arxiv_id": "1706.03762",
-                "title": "Attention Is All You Need",
-                "url": "https://arxiv.org/abs/1706.03762",
-                "abstract": "The dominant sequence transduction models...",
-                "authors": ["Ashish Vaswani", "Noam Shazeer"],
-                "categories": ["cs.CL", "cs.LG"],
-                "published_date": "2017-06-12T00:00:00Z"
-            }
-        }
-
-
-class PaperSection(BaseModel):
-    """A section extracted from a paper."""
-    
-    name: str = Field(..., description="Section name/title")
-    content: str = Field(..., description="Section text content")
-    order: int = Field(..., description="Section order in paper")
-    word_count: int = Field(0, description="Word count")
-    
-    def __init__(self, **data):
-        super().__init__(**data)
-        if self.word_count == 0:
-            self.word_count = len(self.content.split())
-
-
-class ParsedPaper(BaseModel):
-    """A fully parsed paper with sections."""
-    
-    metadata: PaperMetadata
-    sections: list[PaperSection] = Field(default_factory=list)
-    raw_text: Optional[str] = Field(None, description="Full raw text")
-    parsing_method: str = Field("grobid", description="Method used to parse (grobid/abstract)")
-    parsed_at: datetime = Field(default_factory=datetime.utcnow)
-    
-    @property
-    def section_names(self) -> list[str]:
-        return [s.name for s in self.sections]
-    
-    @property
-    def total_words(self) -> int:
-        return sum(s.word_count for s in self.sections)
-
-
-class PaperSearchResult(BaseModel):
-    """Result from a paper search."""
-    
-    paper: PaperMetadata
-    similarity_score: float = Field(..., ge=0, le=1, description="Similarity score")
-    index_position: int = Field(..., description="Position in FAISS index")
-    
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "paper": {
-                    "arxiv_id": "1706.03762",
-                    "title": "Attention Is All You Need",
-                    "url": "https://arxiv.org/abs/1706.03762"
-                },
-                "similarity_score": 0.92,
-                "index_position": 42
-            }
-        }
-
-
-class PaperSearchRequest(BaseModel):
-    """Request to search for papers."""
-    
-    query: str = Field(..., min_length=3, max_length=500, description="Search query")
-    top_k: int = Field(1, ge=1, le=10, description="Number of results")
-    
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "query": "attention mechanisms in transformers",
-                "top_k": 3
-            }
-        }
-```
-
-### backend/models/problem.py
-```python
-"""
-LeetCode Problem Models
-
-Pydantic models for LeetCode-related data structures.
-"""
-
-from typing import Optional
-from enum import Enum
-from pydantic import BaseModel, Field
-
-
-class ProblemDifficulty(str, Enum):
-    """LeetCode problem difficulty levels."""
-    EASY = "Easy"
-    MEDIUM = "Medium"
-    HARD = "Hard"
-
-
-class LeetCodeProblem(BaseModel):
-    """A LeetCode problem."""
-    
-    title: str = Field(..., description="Problem title")
-    slug: str = Field(..., description="URL slug")
-    difficulty: ProblemDifficulty = Field(..., description="Difficulty level")
-    statement: str = Field(..., description="Problem statement")
-    url: str = Field("", description="Full LeetCode URL")
-    
-    # Optional metadata
-    acceptance_rate: Optional[float] = Field(None, description="Acceptance rate percentage")
-    topics: list[str] = Field(default_factory=list, description="Related topics")
-    hints: list[str] = Field(default_factory=list, description="Problem hints")
-    
-    def __init__(self, **data):
-        super().__init__(**data)
-        if not self.url and self.slug:
-            self.url = f"https://leetcode.com/problems/{self.slug}/"
-    
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "title": "Two Sum",
-                "slug": "two-sum",
-                "difficulty": "Easy",
-                "statement": "Given an array of integers nums and an integer target...",
-                "url": "https://leetcode.com/problems/two-sum/",
-                "topics": ["Array", "Hash Table"]
-            }
-        }
-
-
-class ProblemRequest(BaseModel):
-    """Request for a LeetCode problem."""
-    
-    difficulties: list[ProblemDifficulty] = Field(
-        default=[ProblemDifficulty.MEDIUM, ProblemDifficulty.HARD],
-        description="Allowed difficulties"
-    )
-    topics: Optional[list[str]] = Field(None, description="Filter by topics")
-    exclude_premium: bool = Field(True, description="Exclude premium problems")
-    
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "difficulties": ["Medium", "Hard"],
-                "exclude_premium": True
-            }
-        }
-
-
-class ProblemResponse(BaseModel):
-    """Response containing a LeetCode problem."""
-    
-    success: bool = Field(True)
-    problem: Optional[LeetCodeProblem] = None
-    error: Optional[str] = None
-    
-    # Metadata
-    cached: bool = Field(False)
-    processing_time_ms: int = Field(0)
-
-
-class ProblemCatalogEntry(BaseModel):
-    """Entry in the LeetCode problem catalog."""
-    
-    slug: str
-    title: str
-    difficulty: ProblemDifficulty
-    paid_only: bool = False
-    acceptance_rate: Optional[float] = None
-```
-
-### backend/api/main.py
-```python
-"""
-FastAPI Application
-
-Main entry point for the LLM Teaching Assistant API.
-"""
-
-import time
-from contextlib import asynccontextmanager
-from fastapi import FastAPI, Request
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
-
-from core.config import get_settings
-from core.logging import get_logger
-from core.exceptions import BaseAppException
-from api.routes import teach, leetcode, health
-
-logger = get_logger(__name__)
-
-
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    """Application lifespan handler."""
-    # Startup
-    settings = get_settings()
-    logger.info(f"Starting {settings.app_name} v{settings.app_version}")
-    logger.info(f"Debug mode: {settings.debug}")
-    
-    yield
-    
-    # Shutdown
-    logger.info("Shutting down...")
-
-
-def create_app() -> FastAPI:
-    """Create and configure the FastAPI application."""
-    settings = get_settings()
-    
-    app = FastAPI(
-        title=settings.app_name,
-        version=settings.app_version,
-        description="""
-        🎓 **LLM Teaching Assistant API**
+    try:
+        teaching_service = get_teaching_service()
+        results = teaching_service.search_papers(request.query, top_k=request.top_k)
         
-        An AI-powered teaching assistant that:
-        - Retrieves and explains research papers from arXiv
-        - Converts academic content into beginner-friendly lessons
-        - Provides LeetCode problems for coding practice
-        
-        ## Features
-        
-        - **Semantic Search**: Find relevant papers using natural language
-        - **Lesson Generation**: Get step-by-step explanations
-        - **Streaming Support**: Real-time lesson generation via SSE
-        - **Coding Practice**: Random LeetCode problems
-        
-        ## Quick Start
-        
-        ```python
-        import requests
-        
-        # Generate a lesson
-        response = requests.post(
-            "http://localhost:8000/api/v1/teach",
-            json={"query": "attention mechanisms in transformers"}
-        )
-        lesson = response.json()
-        ```
-        """,
-        docs_url="/docs",
-        redoc_url="/redoc",
-        openapi_url="/openapi.json",
-        lifespan=lifespan
-    )
-    
-    # CORS middleware
-    app.add_middleware(
-        CORSMiddleware,
-        allow_origins=["*"],  # Configure for production
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
-    )
-    
-    # Request timing middleware
-    @app.middleware("http")
-    async def add_timing_header(request: Request, call_next):
-        start_time = time.time()
-        response = await call_next(request)
-        process_time = time.time() - start_time
-        response.headers["X-Process-Time"] = str(process_time)
-        return response
-    
-    # Exception handler
-    @app.exception_handler(BaseAppException)
-    async def app_exception_handler(request: Request, exc: BaseAppException):
-        logger.error(f"Application error: {exc.code} - {exc.message}")
-        return JSONResponse(
-            status_code=exc.status_code,
-            content=exc.to_dict()
-        )
-    
-    # Generic exception handler
-    @app.exception_handler(Exception)
-    async def generic_exception_handler(request: Request, exc: Exception):
-        logger.error(f"Unhandled error: {exc}", exc_info=True)
-        return JSONResponse(
-            status_code=500,
-            content={
-                "error": {
-                    "code": "INTERNAL_ERROR",
-                    "message": "An unexpected error occurred"
+        return SearchResponse(
+            success=True,
+            query=request.query,
+            results=[
+                {
+                    "arxiv_id": r.paper.arxiv_id,
+                    "title": r.paper.title,
+                    "url": str(r.paper.url),
+                    "similarity_score": r.similarity_score
                 }
-            }
+                for r in results
+            ]
         )
+        
+    except Exception as e:
+        logger.error(f"Search failed: {e}")
+        return SearchResponse(
+            success=False,
+            query=request.query,
+            results=[]
+        )
+
+
+@router.get("/stats")
+async def get_stats():
+    """
+    Get service statistics.
     
-    # Include routers
-    app.include_router(health.router, tags=["Health"])
-    app.include_router(teach.router, prefix=settings.api_prefix, tags=["Teaching"])
-    app.include_router(leetcode.router, prefix=settings.api_prefix, tags=["LeetCode"])
-    
-    return app
+    Returns:
+    - Index size (number of papers)
+    - Daily fetch usage
+    - Threshold settings
+    - Cache stats
+    """
+    try:
+        teaching_service = get_teaching_service()
+        stats = teaching_service.get_stats()
+        
+        return {
+            "success": True,
+            "stats": stats
+        }
+        
+    except Exception as e:
+        logger.error(f"Stats failed: {e}")
+        return {
+            "success": False,
+            "error": str(e)
+        }
+```
 
+### 2.5 Backend Config Files
 
-# Create application instance
-app = create_app()
+#### backend/requirements.txt
+```
+# Core
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
 
+# AI/ML
+openai>=1.10.0
+faiss-cpu>=1.7.4
+numpy>=1.24.0
 
-if __name__ == "__main__":
-    import uvicorn
-    settings = get_settings()
-    uvicorn.run(
-        "api.main:app",
-        host=settings.api_host,
-        port=settings.api_port,
-        reload=settings.debug
-    )
+# HTTP
+requests>=2.31.0
+httpx>=0.26.0
+aiohttp>=3.9.0
+
+# Parsing
+beautifulsoup4>=4.12.0
+lxml>=5.1.0
+
+# Utilities
+python-dotenv>=1.0.0
+python-multipart>=0.0.6
+
+# Development
+pytest>=7.4.0
+pytest-asyncio>=0.23.0
+black>=24.0.0
+isort>=5.13.0
+mypy>=1.8.0
+
+# Optional: LangGraph (if you want to keep agent functionality)
+# langgraph>=0.0.20
+# langchain>=0.1.0
+# langmem>=0.0.30
+```
+
+#### backend/.env.example
+```
+# =============================================================================
+# LLM Teaching Assistant v2 - Environment Configuration
+# =============================================================================
+# Copy this file to .env and fill in your values
+
+# =============================================================================
+# REQUIRED
+# =============================================================================
+
+# OpenAI API Key (get from https://platform.openai.com)
+OPENAI_API_KEY=sk-your-key-here
+
+# =============================================================================
+# RELEVANCE THRESHOLDS (NEW in v2)
+# =============================================================================
+
+# Score above this = high relevance, use directly
+HIGH_RELEVANCE_THRESHOLD=0.50
+
+# Score above this = medium relevance, use but try to improve  
+MEDIUM_RELEVANCE_THRESHOLD=0.35
+
+# Score below this = irrelevant
+LOW_RELEVANCE_THRESHOLD=0.20
+
+# =============================================================================
+# DYNAMIC PAPER FETCHING (NEW in v2)
+# =============================================================================
+
+# Enable fetching new papers when no good match found
+DYNAMIC_FETCH_ENABLED=true
+
+# Max papers to fetch per query from Semantic Scholar
+MAX_PAPERS_PER_FETCH=10
+
+# Max Semantic Scholar API calls per day (cost control)
+MAX_DAILY_FETCHES=100
+
+# Optional: Semantic Scholar API key (for higher rate limits)
+# Get from: https://www.semanticscholar.org/product/api
+SEMANTIC_SCHOLAR_API_KEY=
+
+# =============================================================================
+# PINECONE (OPTIONAL - for production)
+# =============================================================================
+
+# Use Pinecone instead of FAISS (for persistent dynamic updates)
+USE_PINECONE=false
+
+# Pinecone settings (required if USE_PINECONE=true)
+# Get from https://www.pinecone.io/
+PINECONE_API_KEY=
+PINECONE_INDEX_NAME=llm-teaching-assistant
+PINECONE_ENVIRONMENT=us-east-1
+
+# =============================================================================
+# API Settings
+# =============================================================================
+
+API_HOST=0.0.0.0
+API_PORT=8000
+DEBUG=false
+
+# =============================================================================
+# Model Settings
+# =============================================================================
+
+EMBEDDING_MODEL=text-embedding-3-small
+CHAT_MODEL=gpt-4o
+LESSON_MODEL=gpt-4o-mini
+
+# =============================================================================
+# GROBID (PDF Parsing)
+# =============================================================================
+
+GROBID_URL=https://kermitt2-grobid.hf.space
+GROBID_TIMEOUT=120
+USE_GROBID=true
+
+# =============================================================================
+# Cache Settings
+# =============================================================================
+
+CACHE_ENABLED=true
+CACHE_TTL=86400
+
+# =============================================================================
+# Logging
+# =============================================================================
+
+LOG_LEVEL=INFO
+LOG_FORMAT=text
 ```
 
 ## 3. Frontend Code
 
-### frontend/src/App.tsx
+### 3.1 Entry Points
+
+#### frontend/src/main.tsx
+```tsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import './styles/globals.css'
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+)
+```
+
+#### frontend/src/App.tsx
 ```tsx
 import { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
@@ -2804,96 +3590,9 @@ export default function App() {
 }
 ```
 
-### frontend/src/lib/api.ts
-```typescript
-const API_BASE = (import.meta as any).env?.VITE_API_URL 
-  ? `${(import.meta as any).env.VITE_API_URL}/api/v1`
-  : '/api/v1'
+### 3.2 Components
 
-export interface LessonRequest {
-  query: string
-  difficulty?: 'beginner' | 'intermediate' | 'advanced'
-  include_examples?: boolean
-  include_math?: boolean
-  max_sections?: number
-}
-
-export interface LessonFragment {
-  section_name: string
-  content: string
-  order: number
-  estimated_read_time: number
-}
-
-export interface Lesson {
-  paper_id: string
-  paper_title: string
-  paper_url: string
-  query: string
-  fragments: LessonFragment[]
-  total_read_time: number
-  generation_time_seconds: number
-}
-
-export interface LessonResponse {
-  success: boolean
-  lesson?: Lesson
-  error?: string
-  processing_time_ms: number
-}
-
-export interface Problem {
-  title: string
-  slug: string
-  difficulty: 'Easy' | 'Medium' | 'Hard'
-  statement: string
-  url: string
-  topics: string[]
-}
-
-export interface ProblemResponse {
-  success: boolean
-  problem?: Problem
-  error?: string
-  processing_time_ms: number
-}
-
-export interface StreamChunk {
-  type: 'metadata' | 'section' | 'done' | 'error'
-  data: Record<string, unknown>
-}
-
-export async function generateLesson(request: LessonRequest): Promise<LessonResponse> {
-  const response = await fetch(`${API_BASE}/teach`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(request),
-  })
-  return response.json()
-}
-
-export async function getRandomProblem(
-  difficulties: string[] = ['Medium', 'Hard']
-): Promise<ProblemResponse> {
-  const response = await fetch(`${API_BASE}/leetcode/random`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ difficulties, exclude_premium: true }),
-  })
-  return response.json()
-}
-
-export async function searchPapers(query: string, topK: number = 5) {
-  const response = await fetch(`${API_BASE}/search`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ query, top_k: topK }),
-  })
-  return response.json()
-}
-```
-
-### frontend/src/components/Button.tsx
+#### frontend/src/components/Button.tsx
 ```tsx
 import { forwardRef, ButtonHTMLAttributes } from 'react'
 import { cn } from '@/lib/utils'
@@ -2961,7 +3660,7 @@ Button.displayName = 'Button'
 export default Button
 ```
 
-### frontend/src/components/Card.tsx
+#### frontend/src/components/Card.tsx
 ```tsx
 import { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
@@ -3007,7 +3706,7 @@ export function CardContent({ children, className }: { children: ReactNode; clas
 }
 ```
 
-### frontend/src/components/Header.tsx
+#### frontend/src/components/Header.tsx
 ```tsx
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -3145,7 +3844,7 @@ export default function Header() {
 }
 ```
 
-### frontend/src/components/Hero.tsx
+#### frontend/src/components/Hero.tsx
 ```tsx
 import { useState } from 'react'
 import { motion } from 'framer-motion'
@@ -3318,7 +4017,7 @@ export default function Hero({ onSubmit, isLoading }: HeroProps) {
 }
 ```
 
-### frontend/src/components/Input.tsx
+#### frontend/src/components/Input.tsx
 ```tsx
 import { forwardRef, InputHTMLAttributes, TextareaHTMLAttributes } from 'react'
 import { cn } from '@/lib/utils'
@@ -3372,7 +4071,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
 Textarea.displayName = 'Textarea'
 ```
 
-### frontend/src/components/LessonDisplay.tsx
+#### frontend/src/components/LessonDisplay.tsx
 ```tsx
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -3595,7 +4294,7 @@ function LessonSection({ fragment, index, isExpanded, onToggle }: LessonSectionP
 }
 ```
 
-### frontend/src/components/Loading.tsx
+#### frontend/src/components/Loading.tsx
 ```tsx
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
@@ -3647,7 +4346,7 @@ export function LoadingOverlay({ message = 'Loading...' }: LoadingOverlayProps) 
 }
 ```
 
-### frontend/src/components/ProblemDisplay.tsx
+#### frontend/src/components/ProblemDisplay.tsx
 ```tsx
 import { motion } from 'framer-motion'
 import { 
@@ -3787,48 +4486,118 @@ export default function ProblemDisplay({
 }
 ```
 
-## 4. Dependencies
+### 3.3 Lib & Utils
 
-### backend/requirements.txt
+#### frontend/src/lib/api.ts
+```typescript
+const API_BASE = (import.meta as any).env?.VITE_API_URL 
+  ? `${(import.meta as any).env.VITE_API_URL}/api/v1`
+  : '/api/v1'
+
+export interface LessonRequest {
+  query: string
+  difficulty?: 'beginner' | 'intermediate' | 'advanced'
+  include_examples?: boolean
+  include_math?: boolean
+  max_sections?: number
+}
+
+export interface LessonFragment {
+  section_name: string
+  content: string
+  order: number
+  estimated_read_time: number
+}
+
+export interface Lesson {
+  paper_id: string
+  paper_title: string
+  paper_url: string
+  query: string
+  fragments: LessonFragment[]
+  total_read_time: number
+  generation_time_seconds: number
+}
+
+export interface LessonResponse {
+  success: boolean
+  lesson?: Lesson
+  error?: string
+  processing_time_ms: number
+}
+
+export interface Problem {
+  title: string
+  slug: string
+  difficulty: 'Easy' | 'Medium' | 'Hard'
+  statement: string
+  url: string
+  topics: string[]
+}
+
+export interface ProblemResponse {
+  success: boolean
+  problem?: Problem
+  error?: string
+  processing_time_ms: number
+}
+
+export interface StreamChunk {
+  type: 'metadata' | 'section' | 'done' | 'error'
+  data: Record<string, unknown>
+}
+
+export async function generateLesson(request: LessonRequest): Promise<LessonResponse> {
+  const response = await fetch(`${API_BASE}/teach`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(request),
+  })
+  return response.json()
+}
+
+export async function getRandomProblem(
+  difficulties: string[] = ['Medium', 'Hard']
+): Promise<ProblemResponse> {
+  const response = await fetch(`${API_BASE}/leetcode/random`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ difficulties, exclude_premium: true }),
+  })
+  return response.json()
+}
+
+export async function searchPapers(query: string, topK: number = 5) {
+  const response = await fetch(`${API_BASE}/search`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query, top_k: topK }),
+  })
+  return response.json()
+}
 ```
-# Core
-fastapi>=0.109.0
-uvicorn[standard]>=0.27.0
-pydantic>=2.5.0
-pydantic-settings>=2.1.0
 
-# AI/ML
-openai>=1.10.0
-faiss-cpu>=1.7.4
-numpy>=1.24.0
+#### frontend/src/lib/utils.ts
+```typescript
+import { clsx, type ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
-# HTTP
-requests>=2.31.0
-httpx>=0.26.0
-aiohttp>=3.9.0
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
 
-# Parsing
-beautifulsoup4>=4.12.0
-lxml>=5.1.0
-
-# Utilities
-python-dotenv>=1.0.0
-python-multipart>=0.0.6
-
-# Development
-pytest>=7.4.0
-pytest-asyncio>=0.23.0
-black>=24.0.0
-isort>=5.13.0
-mypy>=1.8.0
-
-# Optional: LangGraph (if you want to keep agent functionality)
-# langgraph>=0.0.20
-# langchain>=0.1.0
-# langmem>=0.0.30
+export function formatReadTime(minutes: number): string {
+  if (minutes < 1) return 'Less than 1 min read'
+  if (minutes === 1) return '1 min read'
+  return `${minutes} min read`
+}
 ```
 
-### frontend/package.json
+### 3.4 Styles
+
+### 3.5 Frontend Config Files
+
+#### frontend/package.json
 ```json
 {
   "name": "llm-teaching-assistant-ui",
@@ -3864,111 +4633,597 @@ mypy>=1.8.0
 }
 ```
 
-## 5. Environment Variables
+#### frontend/vite.config.ts
+```typescript
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
-### backend/.env (sanitized)
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+  server: {
+    port: 3000,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+      },
+    },
+  },
+})
 ```
-# LLM Teaching Assistant Configuration
-# Copy this file to .env and fill in your values
 
-# =<REDACTED>
-# REQUIRED
-# =<REDACTED>
+#### frontend/tailwind.config.js
+```javascript
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+          950: '#082f49',
+        },
+        accent: {
+          50: '#fdf4ff',
+          100: '#fae8ff',
+          200: '#f5d0fe',
+          300: '#f0abfc',
+          400: '#e879f9',
+          500: '#d946ef',
+          600: '#c026d3',
+          700: '#a21caf',
+          800: '#86198f',
+          900: '#701a75',
+          950: '#4a044e',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+      },
+      animation: {
+        'gradient': 'gradient 8s linear infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'shimmer': 'shimmer 2s linear infinite',
+      },
+      keyframes: {
+        gradient: {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center'
+          },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'hero-pattern': 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%239C92AC\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+      },
+    },
+  },
+  plugins: [],
+}
+```
 
-# OpenAI API Key (required)
-OPENAI_API_KEY=<REDACTED>
+#### frontend/tsconfig.json
+```json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+```
 
-# =<REDACTED>
-# OPTIONAL - API Settings
-# =<REDACTED>
+## 4. Root Config Files
 
-# API host and port
-API_HOST=<REDACTED>
-API_PORT=<REDACTED>
+#### README.md
+```markdown
+# 🎓 LLM Teaching Assistant
 
-# Debug mode (set to true for development)
-DEBUG=<REDACTED>
+<div align="center">
 
-# =<REDACTED>
-# OPTIONAL - Model Settings
-# =<REDACTED>
+![Hero](https://img.shields.io/badge/AI-Powered_Learning-blue?style=for-the-badge&logo=openai&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
-# OpenAI models
-EMBEDDING_MODEL=<REDACTED>
-CHAT_MODEL=<REDACTED>
-LESSON_MODEL=<REDACTED>
+**Transform dense research papers into lessons you'll actually understand.**
 
-# =<REDACTED>
-# OPTIONAL - GROBID Settings
-# =<REDACTED>
+[Live Demo](https://your-app.railway.app) · [Report Bug](https://github.com/ganeshasrinivasd/llm-teaching-assistant/issues) · [Request Feature](https://github.com/ganeshasrinivasd/llm-teaching-assistant/issues)
 
-# GROBID service URL (for PDF parsing)
-# Use the cloud service or run locally
-GROBID_URL=<REDACTED>
+</div>
 
-# GROBID timeout in seconds
-GROBID_TIMEOUT=<REDACTED>
+---
 
-# Set to false to use abstract-only mode (no PDF parsing)
-USE_GROBID=<REDACTED>
+## 🤔 The Problem
 
-# =<REDACTED>
-# OPTIONAL - File Paths
-# =<REDACTED>
+Ever tried reading a machine learning research paper?
 
-# Data directory
-DATA_DIR=<REDACTED>
+```
+"We propose a novel attention mechanism utilizing scaled dot-product 
+attention with multi-head projections across the latent space..."
+```
 
-# FAISS index path
-FAISS_INDEX_PATH=<REDACTED>
+**Translation:** 😵‍💫
 
-# URLs JSON path
-URLS_JSON_PATH=<REDACTED>
+Research papers are written by experts, for experts. But what if you're:
+- A student trying to learn ML
+- A developer wanting to understand new techniques
+- A curious mind exploring AI
 
-# Cache directory
-CACHE_DIR=<REDACTED>
+You're stuck with two bad options:
+1. **Read the paper** → Get lost in jargon, math, and assumptions
+2. **Ask ChatGPT** → Get a generic summary that misses the nuances
 
-# =<REDACTED>
-# OPTIONAL - Cache Settings
-# =<REDACTED>
+---
 
-# Enable/disable caching
-CACHE_ENABLED=<REDACTED>
+## 💡 The Solution
 
-# Cache TTL in seconds (default: 24 hours)
-CACHE_TTL=<REDACTED>
+What if an AI could:
+1. **Find** the most relevant paper for what you want to learn
+2. **Read** the entire paper (not just summarize the abstract)
+3. **Teach** you section by section, like a patient tutor
 
-# =<REDACTED>
-# OPTIONAL - Rate Limiting
-# =<REDACTED>
+That's exactly what this does.
 
-# Enable rate limiting
-RATE_LIMIT_ENABLED=<REDACTED>
+```
+You: "Teach me about attention mechanisms"
 
-# Requests per window
-RATE_LIMIT_REQUESTS=<REDACTED>
-
-# Window size in seconds
-RATE_LIMIT_WINDOW=<REDACTED>
-
-# =<REDACTED>
-# OPTIONAL - Logging
-# =<REDACTED>
-
-# Log level (DEBUG, INFO, WARNING, ERROR)
-LOG_LEVEL=<REDACTED>
-
-# Log format (json or text)
-LOG_FORMAT=<REDACTED>
+AI: *finds the Transformer paper*
+    *reads all 15 pages*
+    *generates a personalized lesson*
+    
+    "Let's start with WHY attention matters. Imagine you're 
+    translating 'The cat sat on the mat' to French. When 
+    translating 'cat', which English words should you focus on?
+    
+    This is attention - letting the model CHOOSE what to look at..."
 ```
 
 ---
-## What I Need Claude To Do
 
-Implement v2 improvements:
-1. Add relevance threshold system (0.50/0.35 cutoffs)
-2. Add Semantic Scholar integration for dynamic paper fetching
-3. Add Pinecone service (optional, for production)
-4. Add Query Enhancement service (intent detection)
-5. Remove LeetCode feature
-6. Update teaching_service.py with new orchestration logic
+## 🧠 Why Not Just Use ChatGPT?
+
+Great question. Here's the difference:
+
+### ChatGPT Approach
+```
+You: "Explain transformers"
+ChatGPT: *searches its training data*
+         *gives you a general explanation*
+         *might be outdated or incomplete*
+```
+
+### Our Approach
+```
+You: "Explain transformers"
+Us:  1. Search 231 curated ML papers using semantic similarity
+     2. Find the ACTUAL paper that best matches your query
+     3. Download the PDF
+     4. Parse it into structured sections using GROBID
+     5. Generate lessons from the REAL content
+     6. Cite the source so you can verify
+```
+
+### Technical Comparison
+
+| Aspect | ChatGPT | LLM Teaching Assistant |
+|--------|---------|------------------------|
+| **Source** | Training data (static) | Live papers (dynamic) |
+| **Accuracy** | May hallucinate | Grounded in real papers |
+| **Depth** | Surface-level | Section-by-section deep dive |
+| **Citation** | None | Links to original paper |
+| **Recency** | Knowledge cutoff | Always current papers |
+| **Customization** | Generic | Adapts to your level |
+
+### Non-Technical Explanation
+
+Think of it like this:
+
+**ChatGPT** = A friend who read a lot of books and tells you what they remember
+
+**Us** = A librarian who:
+- Finds the exact book you need
+- Reads it cover to cover
+- Explains each chapter in simple terms
+- Shows you where to find the original
+
+---
+
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                              FRONTEND                                    │
+│                         (React + TypeScript)                             │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐     │
+│  │    Hero     │  │   Lesson    │  │   Problem   │  │   Theme     │     │
+│  │   Input     │  │   Display   │  │   Display   │  │   Toggle    │     │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘     │
+└─────────────────────────────────────┬───────────────────────────────────┘
+                                      │ HTTP/REST
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                              BACKEND                                     │
+│                           (FastAPI + Python)                             │
+│                                                                          │
+│  ┌──────────────────────────────────────────────────────────────────┐   │
+│  │                      API Layer (/api/v1)                          │   │
+│  │  ┌─────────┐  ┌─────────────┐  ┌──────────────┐  ┌────────────┐  │   │
+│  │  │ /health │  │   /teach    │  │ /teach/stream│  │ /leetcode  │  │   │
+│  │  └─────────┘  └─────────────┘  └──────────────┘  └────────────┘  │   │
+│  └──────────────────────────────────────────────────────────────────┘   │
+│                                    │                                     │
+│  ┌──────────────────────────────────────────────────────────────────┐   │
+│  │                     Service Layer                                 │   │
+│  │  ┌──────────────┐  ┌───────────────┐  ┌────────────────────┐     │   │
+│  │  │   Teaching   │  │    Paper      │  │      Lesson        │     │   │
+│  │  │   Service    │──│   Service     │──│      Service       │     │   │
+│  │  │ (orchestrate)│  │ (fetch+parse) │  │ (generate lessons) │     │   │
+│  │  └──────────────┘  └───────────────┘  └────────────────────┘     │   │
+│  │         │                  │                     │                │   │
+│  │  ┌──────────────┐  ┌───────────────┐  ┌────────────────────┐     │   │
+│  │  │   LeetCode   │  │   Embedding   │  │      Cache         │     │   │
+│  │  │   Service    │  │   Service     │  │      Service       │     │   │
+│  │  └──────────────┘  └───────────────┘  └────────────────────┘     │   │
+│  └──────────────────────────────────────────────────────────────────┘   │
+│                                    │                                     │
+└────────────────────────────────────┼────────────────────────────────────┘
+                                     │
+        ┌────────────────────────────┼────────────────────────────┐
+        │                            │                            │
+        ▼                            ▼                            ▼
+┌───────────────┐          ┌─────────────────┐          ┌─────────────────┐
+│   FAISS       │          │     GROBID      │          │    OpenAI       │
+│   Vector DB   │          │  (PDF Parser)   │          │     API         │
+│               │          │                 │          │                 │
+│ 231 papers    │          │ Extracts        │          │ • Embeddings    │
+│ indexed by    │          │ sections from   │          │ • GPT-4o-mini   │
+│ semantic      │          │ academic PDFs   │          │   for lessons   │
+│ similarity    │          │                 │          │                 │
+└───────────────┘          └─────────────────┘          └─────────────────┘
+        ▲                            ▲
+        │                            │
+┌───────────────┐          ┌─────────────────┐
+│    arXiv      │          │    LeetCode     │
+│    Papers     │          │      API        │
+│               │          │                 │
+│ Source of     │          │ Coding problems │
+│ ML research   │          │ for practice    │
+└───────────────┘          └─────────────────┘
+```
+
+---
+
+## 🔄 How It Works (Flow)
+
+```
+                                    ┌─────────────────┐
+                                    │   User Query    │
+                                    │ "Explain BERT"  │
+                                    └────────┬────────┘
+                                             │
+                                             ▼
+                              ┌──────────────────────────┐
+                              │   1. EMBED THE QUERY     │
+                              │   OpenAI text-embedding  │
+                              │   → 1536-dim vector      │
+                              └──────────────┬───────────┘
+                                             │
+                                             ▼
+                              ┌──────────────────────────┐
+                              │   2. SEMANTIC SEARCH     │
+                              │   FAISS finds closest    │
+                              │   paper from 231 indexed │
+                              │   → arxiv.org/abs/xxx    │
+                              └──────────────┬───────────┘
+                                             │
+                                             ▼
+                              ┌──────────────────────────┐
+                              │   3. FETCH & PARSE PDF   │
+                              │   Download from arXiv    │
+                              │   GROBID extracts:       │
+                              │   • Introduction         │
+                              │   • Methods              │
+                              │   • Results              │
+                              │   • 20+ sections         │
+                              └──────────────┬───────────┘
+                                             │
+                                             ▼
+                              ┌──────────────────────────┐
+                              │   4. GENERATE LESSONS    │
+                              │   For each section:      │
+                              │   GPT-4o-mini creates    │
+                              │   beginner-friendly      │
+                              │   explanation            │
+                              └──────────────┬───────────┘
+                                             │
+                                             ▼
+                              ┌──────────────────────────┐
+                              │   5. RETURN LESSON       │
+                              │   Complete course with:  │
+                              │   • Table of contents    │
+                              │   • Section-by-section   │
+                              │   • Source citation      │
+                              │   • Estimated read time  │
+                              └──────────────────────────┘
+```
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend
+| Technology | Purpose | Why This? |
+|------------|---------|-----------|
+| **FastAPI** | REST API | Async, fast, auto-docs, Python type hints |
+| **FAISS** | Vector search | Facebook's library, blazing fast similarity search |
+| **GROBID** | PDF parsing | Best-in-class academic PDF parser, extracts structure |
+| **OpenAI** | Embeddings + LLM | text-embedding-3-small + GPT-4o-mini |
+| **Pydantic** | Data validation | Type safety, automatic serialization |
+
+### Frontend
+| Technology | Purpose | Why This? |
+|------------|---------|-----------|
+| **React 18** | UI framework | Component-based, huge ecosystem |
+| **TypeScript** | Type safety | Catch errors at compile time |
+| **Tailwind CSS** | Styling | Utility-first, rapid development |
+| **Framer Motion** | Animations | Smooth, declarative animations |
+| **Vite** | Build tool | Lightning fast HMR |
+
+### Infrastructure
+| Technology | Purpose |
+|------------|---------|
+| **Railway** | Hosting (backend + frontend) |
+| **GROBID Cloud** | PDF parsing service |
+| **GitHub** | Version control |
+
+---
+
+## 📁 Project Structure
+
+```
+llm-teaching-assistant/
+│
+├── backend/                          # Python FastAPI backend
+│   ├── api/
+│   │   ├── main.py                   # FastAPI app entry
+│   │   └── routes/
+│   │       ├── teach.py              # /teach endpoints
+│   │       ├── leetcode.py           # /leetcode endpoints
+│   │       └── health.py             # Health checks
+│   │
+│   ├── services/
+│   │   ├── teaching_service.py       # Main orchestration
+│   │   ├── paper_service.py          # Paper fetching + GROBID
+│   │   ├── lesson_service.py         # GPT lesson generation
+│   │   ├── embedding_service.py      # FAISS + OpenAI embeddings
+│   │   ├── leetcode_service.py       # LeetCode integration
+│   │   └── cache_service.py          # Caching layer
+│   │
+│   ├── models/                       # Pydantic data models
+│   ├── core/                         # Config, logging, exceptions
+│   └── requirements.txt
+│
+├── frontend/                         # React TypeScript frontend
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Hero.tsx              # Main input section
+│   │   │   ├── LessonDisplay.tsx     # Lesson modal
+│   │   │   ├── ProblemDisplay.tsx    # LeetCode modal
+│   │   │   └── Header.tsx            # Navigation
+│   │   ├── lib/
+│   │   │   └── api.ts                # API client
+│   │   └── App.tsx                   # Main app
+│   │
+│   └── package.json
+│
+└── README.md                         # You are here
+```
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.10+
+- Node.js 18+
+- OpenAI API key
+
+### 1. Clone & Setup Backend
+
+```bash
+git clone https://github.com/ganeshasrinivasd/llm-teaching-assistant.git
+cd llm-teaching-assistant/backend
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Configure environment
+cp .env.example .env
+# Edit .env and add your OPENAI_API_KEY
+
+# Initialize the paper index
+python scripts/setup_index.py
+
+# Run the server
+uvicorn api.main:app --reload
+```
+
+### 2. Setup Frontend
+
+```bash
+cd ../frontend
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
+
+### 3. Open App
+
+Visit **http://localhost:3000** 🎉
+
+---
+
+## 📖 API Reference
+
+### Generate Lesson
+```http
+POST /api/v1/teach
+Content-Type: application/json
+
+{
+  "query": "Explain attention mechanisms",
+  "difficulty": "beginner",
+  "max_sections": 5
+}
+```
+
+### Get Coding Problem
+```http
+POST /api/v1/leetcode/random
+Content-Type: application/json
+
+{
+  "difficulties": ["Medium", "Hard"]
+}
+```
+
+### Health Check
+```http
+GET /health
+```
+
+Full API docs available at `/docs` when running locally.
+
+---
+
+## 🎯 Features
+
+- [x] Semantic paper search
+- [x] PDF parsing with GROBID
+- [x] Section-by-section lessons
+- [x] LeetCode integration
+- [x] Dark/Light mode
+- [x] Mobile responsive
+- [ ] Streaming responses (coming soon)
+- [ ] User accounts
+- [ ] Save lesson history
+- [ ] Multiple difficulty levels
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- [LLMSys-PaperList](https://github.com/AmberLJC/LLMSys-PaperList) for the curated paper collection
+- [GROBID](https://github.com/kermitt2/grobid) for PDF parsing
+- [OpenAI](https://openai.com) for embeddings and language models
+- [LeetCode](https://leetcode.com) for coding problems
+
+---
+
+<div align="center">
+
+**Built with ❤️ for learners everywhere**
+
+[⬆ Back to top](#-llm-teaching-assistant)
+
+</div>
+```
+
+## 6. Project Summary
+
+### Current v2 Features
+- ✅ Relevance thresholds (0.50/0.35/0.20)
+- ✅ Query enhancement (intent detection)
+- ✅ Dynamic paper fetching (Semantic Scholar)
+- ✅ LeetCode removed
+- ✅ FAISS vector search
+- ✅ GROBID PDF parsing
+- ✅ GPT-4o-mini lesson generation
+
+### TODO for Next Phase
+- 🔜 Migrate FAISS → Pinecone (persistent dynamic updates)
+- 🔜 Multi-paper comparison lessons
+- 🔜 Concept Map UI
+- 🔜 User feedback system
+
+---
+
+*Context generated for Claude to understand the complete codebase*

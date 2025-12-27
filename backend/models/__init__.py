@@ -18,6 +18,8 @@ from .lesson import (
     LessonRequest,
     LessonResponse,
     StreamingLessonChunk,
+    ClarifyRequest,
+    ClarifyResponse,
 )
 from .problem import (
     ProblemDifficulty,
@@ -41,6 +43,8 @@ __all__ = [
     "LessonRequest",
     "LessonResponse",
     "StreamingLessonChunk",
+    "ClarifyRequest",
+    "ClarifyResponse",
     # Problem models
     "ProblemDifficulty",
     "LeetCodeProblem",

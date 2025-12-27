@@ -4,13 +4,9 @@ Teaching API Routes v2
 Endpoints:
 - POST /teach - Generate lesson (with query enhancement)
 - POST /teach/stream - Stream lesson generation
+- POST /clarify - NEW: Generate 3 clearer versions of user's query
 - GET /stats - Service statistics
 - POST /search - Search papers
-
-Changes in v2:
-- Added /stats endpoint
-- Added /search endpoint
-- Query enhancement by default
 """
 
 import json
@@ -21,8 +17,15 @@ from pydantic import BaseModel
 
 from core.logging import get_logger
 from core.exceptions import PaperNotFoundError
-from models.lesson import LessonRequest, LessonResponse, LessonDifficulty
+from models.lesson import (
+    LessonRequest, 
+    LessonResponse, 
+    LessonDifficulty,
+    ClarifyRequest,
+    ClarifyResponse
+)
 from services.teaching_service import get_teaching_service
+from services.query_service import get_query_service
 
 logger = get_logger(__name__)
 
@@ -41,6 +44,45 @@ class SearchResponse(BaseModel):
     query: str
     results: list[dict]
 
+
+# ============ NEW: Clarify Endpoint ============
+
+@router.post("/clarify", response_model=ClarifyResponse)
+async def clarify_query(request: ClarifyRequest):
+    """
+    Generate 3 clearer versions of user's query.
+    
+    User picks one, then calls /teach with selected prompt.
+    
+    Example:
+        Input: "GPT, WHAT IS IT"
+        Output: [
+            "What is GPT and how does it work?",
+            "Explain the GPT architecture and its key components",
+            "What is Generative Pre-trained Transformer and why is it important?"
+        ]
+    """
+    logger.info(f"POST /clarify: {request.query}")
+    
+    try:
+        query_service = get_query_service()
+        prompts = query_service.clarify_query(request.query)
+        
+        return ClarifyResponse(
+            original=request.query,
+            prompts=prompts
+        )
+        
+    except Exception as e:
+        logger.error(f"Clarification failed: {e}")
+        # Fallback: return original query 3 times
+        return ClarifyResponse(
+            original=request.query,
+            prompts=[request.query, request.query, request.query]
+        )
+
+
+# ============ Existing Endpoints ============
 
 @router.post("/teach", response_model=LessonResponse)
 async def generate_lesson(request: LessonRequest):

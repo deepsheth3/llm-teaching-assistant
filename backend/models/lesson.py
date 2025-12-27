@@ -117,3 +117,16 @@ class StreamingLessonChunk(BaseModel):
                 {"type": "error", "data": {"message": "Failed to process"}}
             ]
         }
+
+
+# ============ NEW: Clarify Models ============
+
+class ClarifyRequest(BaseModel):
+    """Request to clarify a user query."""
+    query: str = Field(..., min_length=1, max_length=500)
+
+
+class ClarifyResponse(BaseModel):
+    """Response with 3 clarified prompt options."""
+    original: str
+    prompts: list[str]

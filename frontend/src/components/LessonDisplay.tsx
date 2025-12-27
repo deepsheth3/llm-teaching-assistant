@@ -10,7 +10,8 @@ import {
   ChevronUp,
   Copy,
   Check,
-  X
+  X,
+  Sparkles
 } from 'lucide-react'
 import { Card, CardContent, CardHeader } from './Card'
 import Button from './Button'
@@ -19,10 +20,11 @@ import { formatReadTime } from '@/lib/utils'
 
 interface LessonDisplayProps {
   lesson: Lesson
+  selectedQuery?: string  // NEW: The clarified query user selected
   onClose: () => void
 }
 
-export default function LessonDisplay({ lesson, onClose }: LessonDisplayProps) {
+export default function LessonDisplay({ lesson, selectedQuery, onClose }: LessonDisplayProps) {
   const [expandedSections, setExpandedSections] = useState<Set<number>>(
     new Set(lesson.fragments.map((_, i) => i))
   )
@@ -116,6 +118,23 @@ export default function LessonDisplay({ lesson, onClose }: LessonDisplayProps) {
               </div>
             </CardHeader>
 
+            {/* NEW: Show the selected/clarified query */}
+            {selectedQuery && (
+              <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-800 bg-primary-50 dark:bg-primary-950/30">
+                <div className="flex items-start gap-3">
+                  <Sparkles className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
+                      Your question:
+                    </p>
+                    <p className="text-base font-medium text-gray-900 dark:text-white">
+                      "{selectedQuery}"
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Table of Contents */}
             <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-800">
               <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3">
@@ -170,17 +189,17 @@ function LessonSection({ fragment, index, isExpanded, onToggle }: LessonSectionP
   return (
     <motion.div
       id={`section-${index}`}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1 }}
-      className="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden"
+      transition={{ delay: index * 0.05 }}
+      className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden"
     >
       <button
         onClick={onToggle}
         className="w-full px-4 py-3 flex items-center justify-between bg-gray-50 dark:bg-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
       >
         <div className="flex items-center gap-3">
-          <span className="w-6 h-6 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 text-sm font-medium flex items-center justify-center">
+          <span className="w-6 h-6 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 text-sm flex items-center justify-center font-medium">
             {index + 1}
           </span>
           <h3 className="font-semibold text-gray-900 dark:text-white capitalize">

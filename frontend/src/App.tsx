@@ -7,7 +7,7 @@ import { generateLesson, getRandomProblem, Lesson, Problem, LessonRequest } from
 type ViewState = 
   | { type: 'home' }
   | { type: 'loading'; message: string }
-  | { type: 'lesson'; lesson: Lesson }
+  | { type: 'lesson'; lesson: Lesson; selectedQuery: string }
   | { type: 'problem'; problem: Problem }
   | { type: 'error'; message: string }
 
@@ -15,15 +15,20 @@ export default function App() {
   const [viewState, setViewState] = useState<ViewState>({ type: 'home' })
   const [isLoading, setIsLoading] = useState(false)
 
+  /**
+   * Handle submission - receives the clarified/selected prompt
+   * @param query - The user-selected clarified prompt (or original for code mode)
+   * @param mode - 'learn' or 'code'
+   */
   const handleSubmit = async (query: string, mode: 'learn' | 'code') => {
     setIsLoading(true)
 
     try {
       if (mode === 'learn') {
-        setViewState({ type: 'loading', message: 'Searching for relevant papers...' })
+        setViewState({ type: 'loading', message: 'Finding the best paper for your question...' })
         
         const request: LessonRequest = {
-          query,
+          query,  // This is now the user-selected clarified prompt
           difficulty: 'beginner',
           include_examples: true,
           include_math: true,
@@ -33,7 +38,11 @@ export default function App() {
         const response = await generateLesson(request)
 
         if (response.success && response.lesson) {
-          setViewState({ type: 'lesson', lesson: response.lesson })
+          setViewState({ 
+            type: 'lesson', 
+            lesson: response.lesson,
+            selectedQuery: query  // Store the selected query to display
+          })
         } else {
           setViewState({ 
             type: 'error', 
@@ -41,6 +50,7 @@ export default function App() {
           })
         }
       } else {
+        // Code mode - same as before
         setViewState({ type: 'loading', message: 'Finding a coding challenge...' })
         
         const response = await getRandomProblem()
@@ -99,7 +109,8 @@ export default function App() {
 
           {viewState.type === 'lesson' && (
             <LessonDisplay 
-              lesson={viewState.lesson} 
+              lesson={viewState.lesson}
+              selectedQuery={viewState.selectedQuery}
               onClose={handleClose} 
             />
           )}
