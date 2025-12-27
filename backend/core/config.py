@@ -125,7 +125,16 @@ class Settings(BaseSettings):
     # Logging
     # ==========================================================================
     log_level: str = "INFO"
+<<<<<<< HEAD
+    log_format: str = "json"  # "json" or "text"
+
+    #PineCone
+    pinecone_api_key: str = Field(..., description="Pinecone API key")
+    pinecone_env: str
+    pinecone_index_name: str = "related-papers"
+=======
     log_format: str = "text"
+>>>>>>> upstream/main
     
     @field_validator("openai_api_key")
     @classmethod
