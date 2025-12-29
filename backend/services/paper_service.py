@@ -41,8 +41,30 @@ class PaperService:
         self.settings = get_settings()
         self.embedding_service = get_embedding_service()
         self.cache = get_cache_service()
+
+        self._existing_paper_ids = set()
+        self._load_existing_papers()
         
         logger.info(f"Paper service initialized: grobid={self.settings.grobid_url}")
+
+    def _load_existing_papers(self):
+        """Load all existing paper IDs from the embedding service into a set for fast lookup."""
+        try:
+            existing_urls = self.embedding_service.urls
+            for url in existing_urls:
+                arxiv_id = self._extract_arxiv_id(url)
+                if arxiv_id:
+                    self._existing_paper_ids.add(arxiv_id)
+
+                if "semantic_" in url:
+                    semantic_id = url.split("semantic_")[-1].split("/")[0]
+                    if semantic_id:
+                        self._existing_paper_ids.add(semantic_id)
+
+            logger.info(f"Loaded {len(self._existing_paper_ids)} existing paper IDs for tracking.")
+
+        except Exception as e:
+            logger.error(f"Error loading existing papers: {e}")
     
     def search(self, query: str, top_k: int = 1) -> list[PaperSearchResult]:
         """
@@ -271,6 +293,23 @@ class PaperService:
             "grobid_enabled": self.settings.use_grobid,
             "cache_stats": self.cache.get_stats()
         }
+    
+    def paper_exists(self, arxiv_id: str = None, semantic_scholar_id: str = None) -> bool:
+        """Check if paper exists - checks both IDs in same set"""
+        if arxiv_id and arxiv_id in self._existing_paper_ids:
+            return True
+        
+        if semantic_scholar_id and semantic_scholar_id in self._existing_paper_ids:
+            return True
+        
+        return False
+
+    def add_paper_to_tracking(self, arxiv_id: str = None, semantic_scholar_id: str = None):
+        """Add either or both IDs to the set"""
+        if arxiv_id:
+            self._existing_paper_ids.add(arxiv_id)
+        if semantic_scholar_id:
+            self._existing_paper_ids.add(semantic_scholar_id)
 
 
 # Singleton instance

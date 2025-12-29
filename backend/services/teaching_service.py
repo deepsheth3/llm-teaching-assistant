@@ -252,6 +252,11 @@ class TeachingService:
             paper_id = paper.get("paperId")
             abstract = paper.get("abstract", "")
             title = paper.get("title", "")
+
+            arxiv_id = self.scholar_service.get_arxiv_id(paper)
+            if self.paper_service.paper_exists(arxiv_id=arxiv_id,semantic_scholar_id=paper_id):
+                logger.info(f"Paper already exists in index: {arxiv_id} / {paper_id}")
+                continue
             
             if not abstract or not paper_id:
                 continue
