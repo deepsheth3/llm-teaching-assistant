@@ -9,8 +9,17 @@ Tests that:
 
 import pytest
 from unittest.mock import Mock, MagicMock, patch
-from services.paper_service import PaperService
-from services.teaching_service import TeachingService
+import os
+
+# Set test environment variables before importing services
+os.environ['OPENAI_API_KEY'] = 'sk-test-key-for-testing'
+
+
+@pytest.fixture(autouse=True)
+def mock_embedding_service():
+    """Mock the embedding service for all tests."""
+    with patch('services.embedding_service.OpenAI'):
+        yield
 
 
 class TestPaperDeduplication:
@@ -18,9 +27,18 @@ class TestPaperDeduplication:
     
     @pytest.fixture
     def paper_service(self):
-        """Create a mock PaperService instance."""
-        service = PaperService()
-        return service
+        """Create a PaperService instance with mocked dependencies."""
+        with patch('services.paper_service.get_embedding_service') as mock_emb, \
+             patch('services.paper_service.get_cache_service') as mock_cache:
+            
+            # Setup mocks
+            mock_emb.return_value.urls = []
+            mock_cache.return_value = Mock()
+            
+            from services.paper_service import PaperService
+            service = PaperService()
+            service._existing_paper_ids = set()  # Start with empty set
+            return service
     
     def test_paper_exists_with_arxiv_id(self, paper_service):
         """Test that paper_exists detects papers by arXiv ID."""
@@ -108,6 +126,7 @@ class TestTeachingServiceDeduplication:
              patch('services.teaching_service.get_scholar_service'), \
              patch('services.teaching_service.get_embedding_service'):
             
+            from services.teaching_service import TeachingService
             service = TeachingService()
             return service
     

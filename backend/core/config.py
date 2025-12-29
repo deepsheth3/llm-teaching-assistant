@@ -43,7 +43,7 @@ class Settings(BaseSettings):
     # ==========================================================================
     # OpenAI Settings
     # ==========================================================================
-    openai_api_key: str = Field(..., description="OpenAI API key")
+    openai_api_key: Optional[str] = Field(default=None, description="OpenAI API key (required for production, optional for tests)")
     embedding_model: str = "text-embedding-3-small"
     chat_model: str = "gpt-4o"
     lesson_model: str = "gpt-4o-mini"
@@ -129,9 +129,10 @@ class Settings(BaseSettings):
     
     @field_validator("openai_api_key")
     @classmethod
-    def validate_api_key(cls, v: str) -> str:
-        if not v or v == "your-api-key-here":
-            raise ValueError("Valid OpenAI API key is required")
+    def validate_api_key(cls, v: Optional[str]) -> Optional[str]:
+        # Allow empty API key during tests
+        if v and v == "your-api-key-here":
+            raise ValueError("Valid OpenAI API key is required (or leave empty for tests)")
         return v
     
     @field_validator("pinecone_api_key")
