@@ -13,36 +13,28 @@ jobs:
   test:
     runs-on: ubuntu-latest
     
-    strategy:
-      matrix:
-        python-version: ['3.10', '3.11', '3.12']
-    
     steps:
     - uses: actions/checkout@v3
     
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python 3.11
       uses: actions/setup-python@v4
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: '3.11'
+        cache: 'pip' # Enable built-in pip caching
     
     - name: Install dependencies
       working-directory: ./backend
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install pytest pytest-cov pytest-mock
+        pip install pytest pytest-cov pytest-mock pytest-asyncio
     
-    - name: Run unit tests
+    - name: Run tests with coverage
       working-directory: ./backend
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        pytest tests/ -v -m "not integration"
-    
-    - name: Generate coverage report
-      working-directory: ./backend
-      run: |
-        pytest tests/ --cov=services --cov=api --cov-report=xml -m "not integration"
+        pytest tests/ -v --cov=services --cov=api --cov-report=xml -m "not integration"
 
   lint:
     runs-on: ubuntu-latest
@@ -50,10 +42,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Set up Python
+    - name: Set up Python 3.11
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
+        cache: 'pip'
     
     - name: Install linting tools
       working-directory: ./backend
@@ -82,10 +75,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Set up Python
+    - name: Set up Python 3.11
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
+        cache: 'pip'
     
     - name: Install security tools
       working-directory: ./backend
