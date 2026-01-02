@@ -132,37 +132,45 @@ class TestTeachingServiceDeduplication:
     
     def test_fetch_and_add_papers_skips_duplicates(self, teaching_service):
         """Test that _fetch_and_add_papers skips papers that already exist."""
-        # Mock papers from Semantic Scholar
-        mock_papers = [
-            {
-                'paperId': 'paper1',
-                'title': 'Existing Paper',
-                'abstract': 'This paper already exists in the index.',
-                'url': 'https://semanticscholar.org/paper/paper1'
-            },
-            {
-                'paperId': 'paper2',
-                'title': 'New Paper',
-                'abstract': 'This is a new paper that should be added.',
-                'url': 'https://semanticscholar.org/paper/paper2'
-            }
-        ]
-        
-        # Mock the scholar service to return papers
-        teaching_service.scholar_service.search_papers.return_value = mock_papers
-        
-        # Mock paper service - first paper exists, second doesn't
-        teaching_service.paper_service.paper_exists.side_effect = [True, False]
-        teaching_service.scholar_service.get_arxiv_id.return_value = None
-        teaching_service.scholar_service.get_arxiv_url.return_value = None
-        teaching_service.embedding_service.create_embedding.return_value = [0.1, 0.2]
-        
-        # Call _fetch_and_add_papers
-        result = teaching_service._fetch_and_add_papers("test query")
-        
-        # Test: Only new paper should be added (not the duplicate)
-        assert len(result) == 1
-        assert result[0]['id'] == 'semantic_paper2'
+        # Mock _add_papers_to_index to prevent disk I/O and local import issues
+        with patch.object(teaching_service, '_add_papers_to_index') as mock_add_index:
+             
+            # Mock papers from Semantic Scholar
+            mock_papers = [
+                {
+                    'paperId': 'paper1',
+                    'title': 'Existing Paper',
+                    'abstract': 'This paper already exists in the index.',
+                    'url': 'https://semanticscholar.org/paper/paper1'
+                },
+                {
+                    'paperId': 'paper2',
+                    'title': 'New Paper',
+                    'abstract': 'This is a new paper that should be added.',
+                    'url': 'https://semanticscholar.org/paper/paper2'
+                }
+            ]
+            
+            # Mock the scholar service to return papers
+            teaching_service.scholar_service.search_papers.return_value = mock_papers
+            
+            # Mock paper service - first paper exists, second doesn't
+            teaching_service.paper_service.paper_exists.side_effect = [True, False]
+            teaching_service.scholar_service.get_arxiv_id.return_value = None
+            teaching_service.scholar_service.get_arxiv_url.return_value = None
+            teaching_service.embedding_service.create_embedding.return_value = [0.1, 0.2]
+            
+            # Call _fetch_and_add_papers
+            result = teaching_service._fetch_and_add_papers("test query")
+            
+            # Test: Only new paper should be added (not the duplicate)
+            assert len(result) == 1
+            assert result[0]['id'] == 'semantic_paper2'
+            
+            # Verify _add_papers_to_index was called with the correct paper
+            mock_add_index.assert_called_once()
+            args, _ = mock_add_index.call_args
+            assert args[0][0]['id'] == 'semantic_paper2'
 
 
 # Integration test (requires real services to be running)
